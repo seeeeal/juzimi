@@ -1,0 +1,74 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:fontFamily">@font/font_family_second</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/animation_activity</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="animation_activity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_right_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_right_out</item>
+    </style>
+
+    <style name="shareboard_animation">
+        <item name="android:windowEnterAnimation">@anim/shareboard_animation_in</item>
+        <item name="android:windowExitAnimation">@anim/shareboard_animation_out</item>
+    </style>
+
+    <style name="AboutDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@color/white_dark</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="LoginDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@color/white_dark</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="picture.default.style" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/white_dark</item>
+        <item name="picture.title.textColor">@color/colorAccent</item>
+        <item name="picture.right.textColor">@color/colorAccent</item>
+        <item name="picture.statusFontColor">false</item>
+        <item name="picture.leftBack.icon">@drawable/back</item>
+        <item name="picture.arrow_down.icon">@drawable/down</item>
+        <item name="picture.arrow_up.icon">@drawable/up</item>
+        <item name="picture.checked.style">@drawable/picture_checkbox_selector</item>
+        <item name="picture.style.checkNumMode">false</item>
+        <item name="picture.style.numComplete">false</item>
+        <item name="picture.bottom.bg">@color/color_fa</item>
+        <item name="picture.preview.textColor">@color/tab_color_true</item>
+        <item name="picture.complete.textColor">@color/tab_color_true</item>
+        <item name="picture.num.style">@drawable/num_oval</item>
+        <item name="picture.ac_preview.title.textColor">@color/white</item>
+        <item name="picture.ac_preview.complete.textColor">@color/tab_color_true</item>
+        <item name="picture.ac_preview.title.bg">@color/white</item>
+        <item name="picture.ac_preview.bottom.bg">@color/white</item>
+        <item name="picture.status.color">@color/white_dark</item>
+        <item name="picture.preview.leftBack.icon">@drawable/back</item>
+        <item name="picture.preview.statusFontColor">false</item>
+        <item name="picture.crop.toolbar.bg">@color/white</item>
+        <item name="picture.crop.status.color">@color/white_dark</item>
+        <item name="picture.crop.title.color">@color/white</item>
+        <item name="picture.folder_checked_dot">@drawable/orange_oval</item>
+    </style>
+
+</resources>

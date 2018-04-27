@@ -1,0 +1,174 @@
+<resources>
+    <string name="app_name">摘·抄</string>
+    <string name="load_fail">加载数据异常</string>
+    <string name="search_hint">请输入作品或作者,例如\'大话西游\'或\'周星驰\'</string>
+    <string name="search_history">搜索记录</string>
+    <string name="input_error">输入不能为空</string>
+    <string name="null_string" />
+    <string name="clean_tags">清除记录</string>
+    <string name="search_recommend">搜索示例</string>
+    <string name="article_intro">简介:</string>
+    <string name="article_related">相关作品:</string>
+    <string name="article_related_empty">没有发现相关作品</string>
+    <string name="save">保存</string>
+    <string name="save_share">分享</string>
+    <string name="save_successd">已保存至公共目录Lines文件夹下</string>
+    <string name="share_title">卡片</string>
+    <string name="menu_about">○\t\t\t\t\t\t关于</string>
+    <string name="menu_open_source">○\t\t\t\t\t\t开源相关</string>
+    <string name="menu_clear_cache">○\t\t\t\t\t\t缓存清理</string>
+    <string name="menu_feedback">○\t\t\t\t\t\t意见反馈</string>
+    <string name="menu_collection">○\t\t\t\t\t\t本地收藏</string>
+    <string name="menu_widget_theme">○\t\t\t\t\t\t插件主题</string>
+    <string name="clearCache">清理缓存成功</string>
+    <string name="open_source_title">开源相关</string>
+    <string name="feedback_error">您的设备尚未安装邮件软件</string>
+    <string name="web_about">http://dbtz.life/about/</string>
+    <string name="web_about_jzm">http://www.juzimi.com</string>
+    <string name="rationale_tip">公共存储权限仅用于存储分享的图片信息，如果没有该权限图片将无法存储至本地，请在权限选项中开启该权限</string>
+    <string name="pre_tip">提示</string>
+    <string name="pre_positive">前去设置</string>
+    <string name="pre_negative">放弃</string>
+    <string name="pre_success">权限设置成功</string>
+    <string name="per_request">保存图片至本地需要提供存储权限</string>
+    <string name="accept">前去开启</string>
+    <string name="cancel">取消</string>
+    <string name="no_per">尚未获得权限</string>
+    <string name="wx_share">微信</string>
+    <string name="wx_circle_share">朋友圈</string>
+    <string name="building">仅复制</string>
+    <string name="share_succeed">分享成功</string>
+    <string name="share_failed">分享失败</string>
+    <string name="about_jzm">数据来源: 句子迷(www.juzimi.com)</string>
+    <string name="about_me">About Me</string>
+    <string name="retry_connect">没有找到数据哦 点击重试</string>
+    <string name="jp_bg_diy">背景</string>
+    <string name="share_line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</string>
+    <string name="share_title_col">字色</string>
+    <string name="nav_menu_update">○\t\t\t\t\t\t检测升级</string>
+    <string name="request_version_error">请求失败</string>
+    <string name="update_tip">已是最新版本</string>
+    <string name="exist_new_version">发现新版本是否立即下载</string>
+    <string name="dialog_update_download">前去下载</string>
+    <string name="login_title">使用句子迷账户进行登录</string>
+    <string name="login_btn">登录</string>
+    <string name="register_account">前往句子迷注册账号</string>
+    <string name="login_name_hint">输入账户名</string>
+    <string name="login_pass_hint">输入密码</string>
+    <string name="login_activity_title"> </string>
+    <string name="login_param_error">账号或密码格式不正确</string>
+    <string name="dialog_login">正在登录...</string>
+    <string name="positive_defalult">确定</string>
+    <string name="negative_defalult">取消</string>
+    <string name="login_out">账号已退出</string>
+    <string name="delete_sentence">取消收藏</string>
+    <string name="add_sentence">加入收藏</string>
+    <string name="collection_title">收藏</string>
+    <string name="collection_empty">没有收藏哦</string>
+    <string name="clike_finish">双击退出应用</string>
+    <string name="widget_add">＋ 选择句子</string>
+
+    <string-array name="tab_item">
+        <item>广场</item>
+        <item>分类</item>
+        <item>搜索</item>
+    </string-array>
+
+    <string-array name="menu_item">
+        <item>书籍</item>
+        <item>电影</item>
+        <item>散文</item>
+        <item>动漫</item>
+        <item>电视剧</item>
+        <item>古诗词</item>
+    </string-array>
+
+    <string-array name="recommend_tag_item">
+        <item>当幸福来敲门</item>
+        <item>喜剧之王</item>
+        <item>模仿游戏</item>
+        <item>我的团长我的团</item>
+        <item>杜甫</item>
+        <item>两小无猜</item>
+    </string-array>
+
+    <string-array name="os_title">
+        <item>butterknife</item>
+        <item>RxJava</item>
+        <item>retrofit</item>
+        <item>Fruit</item>
+        <item>glide</item>
+        <item>easypermissions</item>
+        <item>ImmersionBar</item>
+        <item>BaseRecyclerViewAdapterHelper</item>
+        <item>MaterialEditText</item>
+        <item>BiliShare</item>
+        <item>AndroidTagGroup</item>
+        <item>BGABanner-Android</item>
+        <item>PictureSelector</item>
+        <item>stetho</item>
+        <item>objectbox-java</item>
+    </string-array>
+
+    <string-array name="os_author">
+        <item>JakeWharton</item>
+        <item>ReactiveX</item>
+        <item>square</item>
+        <item>ghuiii</item>
+        <item>bumptech</item>
+        <item>googlesamples</item>
+        <item>gyf-dev</item>
+        <item>CymChad</item>
+        <item>rengwuxian</item>
+        <item>Bilibili</item>
+        <item>2dxgujun</item>
+        <item>bingoogolapple</item>
+        <item>LuckSiege</item>
+        <item>facebook</item>
+        <item>objectbox</item>
+    </string-array>
+
+    <string-array name="os_intro">
+        <item>Field and method binding for Android views which uses annotation processing to generate boilerplate code for you</item>
+        <item>Reactive Extensions for the JVM</item>
+        <item>Type-safe HTTP client for Android and Java by Square, Inc.</item>
+        <item>Fruit is a Java library that can be used to convert html to Java Objects and back follow a certain rule. So, in short, Fruit for Html just like Gson for Json</item>
+        <item>An image loading and caching library for Android focused on smooth scrolling</item>
+        <item>EasyPermissions is a wrapper library to simplify basic system permissions logic when targeting Android M or higher</item>
+        <item>android 4.4以上沉浸式状态栏和沉浸式导航栏管理</item>
+        <item>Powerful and flexible RecyclerAdapter</item>
+        <item>EditText in Material Design</item>
+        <item>社会化分享框架</item>
+        <item>A beautiful android tag group widget</item>
+        <item>引导界面滑动导航,无限轮播,切换动画轮播效果</item>
+        <item>Picture Selector Library for Android</item>
+        <item>Stetho is a debug bridge for Android applications, enabling the powerful Chrome Developer Tools and much more.</item>
+        <item>ObjectBox is a superfast mobile database for objects</item>
+    </string-array>
+
+    <string-array name="os_link">
+        <item>https://github.com/JakeWharton/butterknife</item>
+        <item>https://github.com/ReactiveX/RxJava</item>
+        <item>https://github.com/square/retrofit</item>
+        <item>https://github.com/ghuiii/Fruit</item>
+        <item>https://github.com/bumptech/glide</item>
+        <item>https://github.com/googlesamples/easypermissions</item>
+        <item>https://github.com/gyf-dev/ImmersionBar</item>
+        <item>https://github.com/CymChad/BaseRecyclerViewAdapterHelper</item>
+        <item>https://github.com/rengwuxian/MaterialEditText</item>
+        <item>https://github.com/Bilibili/BiliShare</item>
+        <item>https://github.com/2dxgujun/AndroidTagGroup</item>
+        <item>https://github.com/bingoogolapple/BGABanner-Android</item>
+        <item>https://github.com/LuckSiege/PictureSelector</item>
+        <item>https://github.com/facebook/stetho</item>
+        <item>https://github.com/objectbox/objectbox-java</item>
+    </string-array>
+
+    <string-array name="hotpage_tag">
+        <item>4/4 最新上传</item>
+        <item>1/4 今日热门</item>
+        <item>2/4 今日推荐</item>
+        <item>3/4 最受欢迎</item>
+    </string-array>
+
+</resources>

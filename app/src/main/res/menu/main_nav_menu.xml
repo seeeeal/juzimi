@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/nav_group_account">
+        <item
+            android:id="@+id/nav_menu_collection"
+            android:title="@string/menu_collection"/>
+        <item
+            android:id="@+id/nav_menu_widget_theme"
+            android:title="@string/menu_widget_theme" />
+    </group>
+
+    <group android:id="@+id/nav_group_main">
+
+        <item
+            android:id="@+id/nav_menu_clear_cache"
+            android:title="@string/menu_clear_cache"/>
+
+        <item
+            android:id="@+id/nav_menu_feedback"
+            android:title="@string/menu_feedback"/>
+
+        <item android:id="@+id/nav_menu_update"
+            android:title="@string/nav_menu_update"/>
+    </group>
+
+    <group android:id="@+id/nav_group_aux">
+        <item
+            android:id="@+id/nav_menu_open_source"
+            android:title="@string/menu_open_source"/>
+
+        <item
+            android:id="@+id/nav_menu_about"
+            android:title="@string/menu_about"/>
+    </group>
+
+</menu>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/share_card_top_image_bg"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"/>
+
+    <RelativeLayout
+        android:id="@+id/share_card_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginRight="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_40"
+        android:background="@drawable/share_card_top_bg">
+
+        <ImageView
+            android:id="@+id/share_card_top_image"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/card_default_bg"/>
+
+        <ImageView
+            android:id="@+id/share_card_top_collect"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/no_collection"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/share_card_top_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_alignBottom="@id/share_card_top_image"
+            android:fontFamily="@font/font_family"
+            android:text="鲁迅"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:lineSpacingExtra="5dp"/>
+
+        <TextView
+            android:id="@+id/share_card_top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_above="@id/share_card_top_author"
+            android:fontFamily="@font/font_family"
+            android:textSize="24sp"
+            android:textColor="@color/colorAccent"
+            android:text="论薯片"
+            android:lineSpacingExtra="5dp"/>
+
+        <TextView
+            android:id="@+id/share_card_top_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_light"
+            android:padding="20dp"
+            android:fontFamily="@font/font_family_second"
+            android:text="乐事的黄瓜味比上好佳好吃100个可比克"
+            android:textSize="16sp"
+            android:textColor="@color/colorAccent"
+            android:layout_below="@id/share_card_top_image"
+            android:lineSpacingExtra="5dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginRight="@dimen/dp_40"
+        android:layout_marginBottom="@dimen/dp_40"
+        android:background="@drawable/share_card_bottom_bg"
+        android:layout_below="@id/share_card_top">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/share_bottom_QRCode"
+            android:gravity="center"
+            android:singleLine="true"
+            android:ellipsize="none"
+            android:text="@string/share_line" />
+
+        <ImageView
+            android:id="@+id/share_bottom_QRCode"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_centerVertical="true"
+            android:paddingTop="8dp"
+            android:src="@drawable/image"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_centerVertical="true"
+            android:paddingTop="8dp"
+            android:gravity="right"
+            android:textColor="@color/colorAccent"
+            android:textSize="10sp"
+            android:text="长按扫描二维码\n下载 一句APP"
+            android:lineSpacingExtra="5dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

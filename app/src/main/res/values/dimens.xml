@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="default_height">48dp</dimen>
+    <dimen name="elevation">12dp</dimen>
+    <dimen name="shareboard_size">80dp</dimen>
+    <dimen name="dp_100">100dp</dimen>
+</resources>

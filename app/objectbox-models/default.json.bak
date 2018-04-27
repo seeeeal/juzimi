@@ -1,0 +1,69 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:4820802201149527437",
+      "lastPropertyId": "12:1587333751660508725",
+      "name": "SentencesModel",
+      "properties": [
+        {
+          "id": "3:1206718315580090597",
+          "name": "CONTENT"
+        },
+        {
+          "id": "4:3378552402397482360",
+          "name": "WRITER"
+        },
+        {
+          "id": "5:3288890524275425990",
+          "name": "ARTICLE"
+        },
+        {
+          "id": "6:8089956092323990816",
+          "name": "LIKE"
+        },
+        {
+          "id": "7:2008243251305192054",
+          "name": "COMMENT_COUNT"
+        },
+        {
+          "id": "8:8893409785034911264",
+          "name": "PUBLISHER"
+        },
+        {
+          "id": "9:339567684473875999",
+          "name": "IS_COLLECT"
+        },
+        {
+          "id": "10:8824713428273527479",
+          "name": "CARD_PATH"
+        },
+        {
+          "id": "11:8310618497270720317",
+          "name": "DATE"
+        },
+        {
+          "id": "12:1587333751660508725",
+          "name": "sentencesId"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:4820802201149527437",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    4665986325738365762,
+    8914942514534007031
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

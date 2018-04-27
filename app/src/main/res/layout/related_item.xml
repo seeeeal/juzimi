@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/dp_10"
+    android:background="@drawable/background_related"
+    android:padding="@dimen/dp_4"
+    android:clickable="true"
+    android:focusable="true" >
+
+    <TextView
+        android:id="@+id/related_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+
+</RelativeLayout>

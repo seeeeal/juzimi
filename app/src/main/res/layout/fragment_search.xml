@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="?attr/actionBarSize"
+    android:paddingBottom="@dimen/default_height"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <RelativeLayout
+        android:layout_width="340dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/background_edt">
+
+    </RelativeLayout>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/fg_search_edt"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="42dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"
+        android:maxLength="24"
+        android:hint="@string/search_hint"
+        android:textSize="14sp"
+        app:met_baseColor="@color/gray"
+        app:met_primaryColor="@color/yellow_dark"
+        app:met_hideUnderline="true" />
+
+    <View
+        android:id="@+id/fg_search_line0"
+        android:layout_width="3dp"
+        android:layout_height="18dp"
+        android:background="@color/gray_light"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_below="@id/fg_search_edt"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/fg_search_line0"
+        android:paddingLeft="@dimen/dp_10"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/fg_search_edt"
+        android:text="@string/search_recommend"/>
+
+    <me.gujun.android.taggroup.TagGroup
+        android:id="@+id/search_recommend_tags"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/fg_search_line0"
+        android:paddingLeft="@dimen/dp_40"
+        android:paddingRight="20dp"
+        android:layout_marginTop="@dimen/dp_40"
+        app:atg_borderColor="@color/yellow_dark"
+        app:atg_textColor="@color/yellow_dark">
+
+    </me.gujun.android.taggroup.TagGroup>
+
+
+
+    <View
+        android:id="@+id/fg_search_line1"
+        android:layout_width="3dp"
+        android:layout_height="18dp"
+        android:background="@color/gray_light"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginTop="180dp"
+        android:layout_below="@id/fg_search_edt"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/fg_search_line1"
+        android:paddingLeft="@dimen/dp_10"
+        android:layout_marginTop="180dp"
+        android:layout_below="@id/fg_search_edt"
+        android:text="@string/search_history"/>
+
+    <TextView
+        android:id="@+id/fg_search_clean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:layout_alignParentRight="true"
+        android:paddingRight="@dimen/dp_40"
+        android:layout_below="@id/fg_search_edt"
+        android:text="@string/clean_tags"
+        android:textColor="@color/colorAccentDark"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fg_search_line1"
+        android:paddingBottom="@dimen/dp_10"
+        android:scrollbars="none"
+        android:paddingLeft="@dimen/dp_40"
+        android:paddingRight="20dp"
+        android:layout_marginTop="@dimen/dp_40">
+
+        <me.gujun.android.taggroup.TagGroup
+            android:id="@+id/search_his_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:atg_borderColor="@color/yellow_dark"
+            app:atg_textColor="@color/yellow_dark">
+
+        </me.gujun.android.taggroup.TagGroup>
+
+    </ScrollView>
+
+</RelativeLayout>

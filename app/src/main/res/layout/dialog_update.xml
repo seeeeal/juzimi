@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="260dp"
+    android:layout_height="240dp">
+
+    <TextView
+        android:id="@+id/dialog_update_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font_family_second"
+        android:text="@string/exist_new_version"
+        android:textSize="@dimen/sp_16"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/dp_40"
+        android:gravity="center"
+        android:singleLine="true"
+        android:lineSpacingExtra="5dp"/>
+
+    <TextView
+        android:id="@+id/dialog_update_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_update_tip"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:gravity="center"
+        android:fontFamily="@font/font_family_second"
+        android:textSize="14sp"
+        android:text="版本号 0.0.0  大小 100MB"
+        android:lineSpacingExtra="5dp"/>
+
+    <TextView
+        android:id="@+id/dialog_update_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:padding="@dimen/dp_10"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:fontFamily="@font/font_family_second"
+        android:textSize="14sp"
+        android:textColor="@color/colorAccent"
+        android:text="@string/dialog_update_download"
+        android:lineSpacingExtra="5dp"
+        android:background="@drawable/category_ripple"
+        android:clickable="true"
+        android:focusable="true" />
+
+</RelativeLayout>

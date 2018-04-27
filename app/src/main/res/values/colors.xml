@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#000000</color>
+    <color name="colorAccentDark">#88000000</color>
+    <color name="gray">#AAAAAA</color>
+    <color name="yellow_dark">#C8AD5E</color>
+    <color name="gray_light">#CCCCCC</color>
+    <color name="white_dark">#EEEEEE</color>
+    <color name="white_light">#FFFFFF</color>
+    <color name="orange">#D85128</color>
+    <color name="orange_light">#DF8966</color>
+    <color name="white_pink">#b49689</color>
+    <color name="jp_bg_0">#B9887D</color>
+    <color name="jp_bg_1">#EBB471</color>
+    <color name="jp_bg_2">#91989F</color>
+    <color name="gray_trans">#44999999</color>
+    <color name="hotpage_sentences_bg">#EFEFEF</color>
+    <color name="red_bg">#E6103B</color>
+    <color name="red_light">#e12047</color>
+    <color name="share_crad_white">#666666</color>
+    <color name="black_translate">#80000000</color>
+</resources>

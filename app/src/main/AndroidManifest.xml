@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.dabutaizha.lines" >
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.example.dabutaizha.lines.mvp.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon_x"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar" >
+
+        <!-- 适配全面屏,设置屏幕最大长宽比,小于2.056在s8显示黑边 -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1"/>
+
+        <activity android:name=".mvp.SplashActivity"
+            android:icon="@drawable/icon_x"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.example.dabutaizha.lines.mvp.MainActivity"/>
+        <activity android:name=".mvp.CollectionActivity"/>
+        <activity android:name=".mvp.SearchResultActivity" />
+        <activity android:name=".mvp.ArticleActivity" />
+        <activity android:name=".mvp.ShareActivity"/>
+        <activity android:name=".mvp.OpenSourceActivity"/>
+        <activity android:name=".mvp.WebViewActivity"/>
+        <activity android:name=".mvp.WidgetActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".wxapi.WXEntryActivity"
+                  android:configChanges="keyboardHidden|orientation|screenSize"
+                  android:exported="true"
+                  android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <receiver android:name=".provider.WidgetProvider">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_sentence" />
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.seewo.homewidgets.action.CLICK" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
