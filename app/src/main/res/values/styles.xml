@@ -26,7 +26,7 @@
         <item name="android:windowExitAnimation">@anim/shareboard_animation_out</item>
     </style>
 
-    <style name="AboutDialog" parent="Theme.AppCompat.Light.Dialog">
+    <style name="aboutDialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:windowBackground">@color/white_dark</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFrame">@null</item>
@@ -34,8 +34,8 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
-    <style name="LoginDialog" parent="Theme.AppCompat.Light.Dialog">
-        <item name="android:windowBackground">@color/white_dark</item>
+    <style name="rewardDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>

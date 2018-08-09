@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
-import com.example.dabutaizha.lines.mvp.MenuItemFragment;
+import com.example.dabutaizha.lines.mvp.view.MenuItemFragment;
 import com.example.dabutaizha.lines.mvp.contract.MenuFragmentContract;
 
 import java.util.ArrayList;

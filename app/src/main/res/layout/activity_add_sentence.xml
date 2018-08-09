@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<slideDampongAnimationLayout.SlideDampingAnimationLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_sentence_sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    app:bezier_curves_color="@color/black"
+    app:bezier_curves_type="quadratic_bezier_curves"
+    app:allow_gesture="only_left">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <ImageView
+            android:id="@+id/add_sentence_top_image_bg"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:scaleType="centerCrop"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/add_sentence_article"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add_sentence_top_image_bg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:lineSpacingExtra="5dp"
+            app:met_baseColor="@color/black_translate"
+            app:met_primaryColor="@color/black"
+            app:met_floatingLabel="highlight"
+            android:hint="出自作品"
+            app:met_floatingLabelText="出自作品"
+            app:met_hideUnderline="true" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/add_sentence_author"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add_sentence_article"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:lineSpacingExtra="5dp"
+            app:met_baseColor="@color/black_translate"
+            app:met_primaryColor="@color/black"
+            app:met_floatingLabel="highlight"
+            android:hint="作者"
+            app:met_floatingLabelText="作者"
+            app:met_hideUnderline="true" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/add_sentence_content"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add_sentence_author"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:lineSpacingExtra="5dp"
+            app:met_baseColor="@color/black_translate"
+            app:met_primaryColor="@color/black"
+            app:met_floatingLabel="highlight"
+            android:hint="句子正文"
+            app:met_floatingLabelText="句子正文"
+            app:met_hideUnderline="true" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/add_sentence_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:borderWidth="0dp"
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="208dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp"
+            fab:elevation="6dp"
+            fab:pressedTranslationZ="12dp"
+            fab:fabSize="normal"
+            android:src="@drawable/add_sentence_btn"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </RelativeLayout>
+
+</slideDampongAnimationLayout.SlideDampingAnimationLayout>
+

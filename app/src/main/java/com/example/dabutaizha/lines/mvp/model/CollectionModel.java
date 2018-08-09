@@ -1,12 +1,7 @@
 package com.example.dabutaizha.lines.mvp.model;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-
-import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.bean.SentencesModel;
 import com.example.dabutaizha.lines.database.SentencesObjectBox;
-import com.example.dabutaizha.lines.mvp.BaseApplication;
 import com.example.dabutaizha.lines.mvp.contract.CollectionActivityContract;
 
 import java.util.ArrayList;

@@ -23,6 +23,7 @@ public class Constant {
     /**
      *Description: 首页UI相关
      */
+    public static boolean INPUT_SENTENCE_PREMISSION = false;
 
     public static final String FRAGMENT_TITLE = "fragment_title";
 
@@ -111,5 +112,11 @@ public class Constant {
      *Description: 特殊字符
      */
     public static String SPLIT = "•";
-    public static String SAVE_PATH = "/sdcard/Lines/";
+    public static String SAVE_CARD_PATH = "/sdcard/Lines/";
+    public static String SAVE_DIALOGUE_PATH = "/sdcard/LinesDialogue/";
+
+    public static String ZFB_QR_CODE = "intent://platformapi/startapp?saId=10000007&" +
+            "clientVersion=3.7.0.0718&qrcode=https%3A%2F%2Fqr.alipay.com%2Fa6x02298utwbzfxgnqlj3f3%3F_s" +
+            "%3Dweb-other&_t=1472443966571#Intent;" +
+            "scheme=alipayqr;package=com.eg.android.AlipayGphone;end";
 }

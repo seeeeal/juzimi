@@ -7,16 +7,15 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.util.Log;
 
-import com.example.dabutaizha.lines.ImageUtil.ImageLoader;
+import com.example.dabutaizha.lines.FileCacheUtils;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
 import com.example.dabutaizha.lines.bean.SentencesModel;
 import com.example.dabutaizha.lines.bean.VersionInfo;
 import com.example.dabutaizha.lines.database.SentencesObjectBox;
 import com.example.dabutaizha.lines.net.ApiServices;
-import com.example.dabutaizha.lines.mvp.BaseApplication;
+import com.example.dabutaizha.lines.mvp.view.BaseApplication;
 import com.example.dabutaizha.lines.mvp.contract.MainActivityContract;
 
 import java.util.List;
@@ -59,9 +58,6 @@ public class MainModel implements MainActivityContract.Model {
 
                     @Override
                     public void onNext(VersionInfo versionInfo) {
-                        Log.d("DDD", "versionInfo != null : " + (versionInfo != null)
-                        + "versionInfo.getVersionMessage() != null : " + (versionInfo.getVersionMessage() != null)
-                        + "getresponse :" + versionInfo.getResponse());
                         if (versionInfo != null && versionInfo.getVersionMessage() != null) {
                             mPresenter.compareVersionInfo(versionInfo);
                         } else {
@@ -118,7 +114,7 @@ public class MainModel implements MainActivityContract.Model {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            ImageLoader.clearDiskCache();
+            FileCacheUtils.cleanApplicationData(BaseApplication.getInstance());
             return null;
         }
 
@@ -128,4 +124,5 @@ public class MainModel implements MainActivityContract.Model {
             mPresenter.showMessage(BaseApplication.getInstance().getString(R.string.clearCache));
         }
     }
+
 }

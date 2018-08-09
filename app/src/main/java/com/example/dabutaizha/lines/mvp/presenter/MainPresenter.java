@@ -6,16 +6,19 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 
 import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
 import com.example.dabutaizha.lines.bean.VersionInfo;
-import com.example.dabutaizha.lines.mvp.BaseApplication;
-import com.example.dabutaizha.lines.mvp.MenuFragment;
-import com.example.dabutaizha.lines.mvp.SearchFragment;
+import com.example.dabutaizha.lines.database.PremissionObjectBox;
+import com.example.dabutaizha.lines.mvp.view.BaseApplication;
+import com.example.dabutaizha.lines.mvp.view.DialogueFragment;
+import com.example.dabutaizha.lines.mvp.view.HotPageFragment;
+import com.example.dabutaizha.lines.mvp.view.MenuFragment;
+import com.example.dabutaizha.lines.mvp.view.SearchFragment;
 import com.example.dabutaizha.lines.mvp.contract.MainActivityContract;
-import com.example.dabutaizha.lines.mvp.HotPageFragment;
 import com.example.dabutaizha.lines.mvp.model.MainModel;
 
 import java.util.ArrayList;
@@ -44,9 +47,30 @@ public class MainPresenter implements MainActivityContract.Presenter {
     // 初始化所需要的数据
     @Override
     public void initData(Intent intent) {
+        checkInputSentencePremission();
+
         mTitles = ResUtil.getStringArray(R.array.tab_item);
         initFragmentList();
+    }
 
+    private void checkInputSentencePremission() {
+        PremissionObjectBox.getInstance().findAllByRxJava().subscribe(premissionModels -> {
+            if (premissionModels != null) {
+                int size = premissionModels.size();
+                if (size == 0) {
+                    Log.d("dabutaizha", "PremissionBox Error0" + size);
+                    Constant.INPUT_SENTENCE_PREMISSION = false;
+                }
+                if (size == 1) {
+                    Log.d("dabutaizha", "PremissionBox Error1" + size);
+                    Constant.INPUT_SENTENCE_PREMISSION = premissionModels.get(0).isInputSentencePremission();
+                }
+                if (size != 0 && size != 1){
+                    Log.d("dabutaizha", "PremissionBox Error" + size);
+                    Constant.INPUT_SENTENCE_PREMISSION = false;
+                }
+            }
+        });
     }
 
     private void initFragmentList() {
@@ -58,9 +82,12 @@ public class MainPresenter implements MainActivityContract.Presenter {
                     mFragmentList.add(HotPageFragment.newInstance(mTitles[i]));
                     break;
                 case 1:
-                    mFragmentList.add(MenuFragment.newInstance(mTitles[i]));
+                    mFragmentList.add(DialogueFragment.newInstance(mTitles[i]));
                     break;
                 case 2:
+                    mFragmentList.add(MenuFragment.newInstance(mTitles[i]));
+                    break;
+                case 3:
                     mFragmentList.add(new SearchFragment());
                     break;
                 default:

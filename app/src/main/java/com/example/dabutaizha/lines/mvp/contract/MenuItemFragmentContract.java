@@ -18,14 +18,14 @@ public interface MenuItemFragmentContract {
     interface View {
 
         /**
-         *Description: 更新数据
-         */
-        void updateList(List<BlockInfoItem> list);
-
-        /**
          * Description: 初始化监听
          */
         void initViewListener();
+
+        /**
+         *Description: 更新数据
+         */
+        void updateList(List<BlockInfoItem> list);
 
         void showLoadMoreRequestError();
 

@@ -76,26 +76,26 @@
         android:background="@color/gray_light"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="@dimen/dp_40"
-        android:layout_marginTop="180dp"
-        android:layout_below="@id/fg_search_edt"/>
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/search_recommend_tags"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/fg_search_line1"
         android:paddingLeft="@dimen/dp_10"
-        android:layout_marginTop="180dp"
-        android:layout_below="@id/fg_search_edt"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/search_recommend_tags"
         android:text="@string/search_history"/>
 
     <TextView
         android:id="@+id/fg_search_clean"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/search_recommend_tags"
         android:layout_alignParentRight="true"
         android:paddingRight="@dimen/dp_40"
-        android:layout_below="@id/fg_search_edt"
         android:text="@string/clean_tags"
         android:textColor="@color/colorAccentDark"
         android:clickable="true"

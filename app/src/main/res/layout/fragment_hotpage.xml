@@ -1,47 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingTop="?attr/actionBarSize"
-    android:paddingBottom="@dimen/default_height"
-    android:background="@color/colorPrimary">
+    android:paddingBottom="@dimen/default_height">
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/hotpage_refresh"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/fg_menu_tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_height"
+        android:background="@color/colorPrimary"
+        app:tabBackground="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/colorAccent"
+        app:tabTextColor="@color/colorAccentDark"
+        app:tabIndicatorColor="@color/yellow_dark"
+        app:tabMode="fixed" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/fg_menu_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/hotpage_lines"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+    </android.support.v4.view.ViewPager>
 
-    </android.support.v4.widget.SwipeRefreshLayout>
-
-    <RelativeLayout
-        android:id="@+id/hotpage_connent_error"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone">
-
-        <ImageView
-            android:id="@+id/hotpage_connent_error_img"
-            android:layout_width="@dimen/dp_40"
-            android:layout_height="@dimen/dp_40"
-            android:src="@drawable/refresh"
-            android:layout_centerInParent="true" />
-
-        <TextView
-            android:id="@+id/hotpage_connent_error_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/retry_connect"
-            android:layout_below="@id/hotpage_connent_error_img"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/dp_40"/>
-
-    </RelativeLayout>
-
-</RelativeLayout>
+</LinearLayout>

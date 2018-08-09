@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">摘·抄</string>
+    <string name="app_name">摘抄</string>
     <string name="load_fail">加载数据异常</string>
     <string name="search_hint">请输入作品或作者,例如\'大话西游\'或\'周星驰\'</string>
     <string name="search_history">搜索记录</string>
@@ -12,9 +12,10 @@
     <string name="article_related_empty">没有发现相关作品</string>
     <string name="save">保存</string>
     <string name="save_share">分享</string>
-    <string name="save_successd">已保存至公共目录Lines文件夹下</string>
+    <string name="save_successd">图片以保存至相册</string>
     <string name="share_title">卡片</string>
     <string name="menu_about">○\t\t\t\t\t\t关于</string>
+    <string name="menu_coffee">○\t\t\t\t\t\t请我喝咖啡</string>
     <string name="menu_open_source">○\t\t\t\t\t\t开源相关</string>
     <string name="menu_clear_cache">○\t\t\t\t\t\t缓存清理</string>
     <string name="menu_feedback">○\t\t\t\t\t\t意见反馈</string>
@@ -67,11 +68,29 @@
     <string name="collection_empty">没有收藏哦</string>
     <string name="clike_finish">双击退出应用</string>
     <string name="widget_add">＋ 选择句子</string>
+    <string name="reward_tip">支付宝账号已经复制</string>
+    <string name="reward_default_tip">支付宝账号已经复制</string>
+    <string name="add_personal_sentences">+ 自定义卡片</string>
+    <string name="input_sentence_premission_tip">已开启自定义卡片功能</string>
+    <string name="easter_eggs_tis">彩蛋未激活</string>
+    <string name="jump_to_zfb">跳转至支付宝</string>
+    <string name="add_sentence_title">自定义卡片</string>
+    <string name="created_sentence">卡片已加入收藏</string>
+    <string name="question">？</string>
+    <string name="explore_photo_tip">屏幕边缘左滑返回 右滑保存</string>
 
     <string-array name="tab_item">
         <item>广场</item>
+        <item>截图</item>
         <item>分类</item>
         <item>搜索</item>
+    </string-array>
+
+    <string-array name="hotpage_item">
+        <item>最新上传</item>
+        <item>今日热门</item>
+        <item>今日推荐</item>
+        <item>最受欢迎</item>
     </string-array>
 
     <string-array name="menu_item">
@@ -84,11 +103,11 @@
     </string-array>
 
     <string-array name="recommend_tag_item">
-        <item>当幸福来敲门</item>
-        <item>喜剧之王</item>
+        <item>三体</item>
+        <item>爆裂鼓手</item>
         <item>模仿游戏</item>
-        <item>我的团长我的团</item>
-        <item>杜甫</item>
+        <item>海贼王</item>
+        <item>海上钢琴师</item>
         <item>两小无猜</item>
     </string-array>
 

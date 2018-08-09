@@ -41,6 +41,9 @@ public class PictureInfo extends BaseInfo {
         @Pick(value = "img.fp-one-imagen", attr = "src")
         private String pictureUrl;
 
+        @Pick(value = "div.fp-one-cita", attr = "text")
+        private String pictureMessage;
+
         public String getPictureUrl() {
             return pictureUrl;
         }
@@ -49,10 +52,19 @@ public class PictureInfo extends BaseInfo {
             this.pictureUrl = pictureUrl;
         }
 
+        public String getPictureMessage() {
+            return pictureMessage;
+        }
+
+        public void setPictureMessage(String pictureMessage) {
+            this.pictureMessage = pictureMessage;
+        }
+
         @Override
         public String toString() {
             return "PictureItem{" +
                     "pictureUrl='" + pictureUrl + '\'' +
+                    ", pictureMessage='" + pictureMessage + '\'' +
                     '}';
         }
     }

@@ -11,7 +11,7 @@ import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.load.engine.cache.InternalCacheDiskCacheFactory;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.dabutaizha.lines.Constant;
-import com.example.dabutaizha.lines.mvp.BaseApplication;
+import com.example.dabutaizha.lines.mvp.view.BaseApplication;
 
 /**
  * Copyright (C) 2018 Unicorn, Inc.

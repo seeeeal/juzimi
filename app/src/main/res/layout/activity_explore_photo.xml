@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<slideDampongAnimationLayout.SlideDampingAnimationLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/photo_sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:bezier_curves_color="@color/black"
+    app:bezier_curves_type="quadratic_bezier_curves"
+    app:allow_gesture="both">
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/explore_photo_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/explore_question_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_explore_photo_question"
+        android:textColor="@color/white"
+        android:fontFamily="@font/font_family"
+        android:paddingLeft="@dimen/dp_4"
+        android:gravity="center"
+        android:text="@string/question"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="30dp"
+        android:elevation="4dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/explore_tip_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_explore_photo_question"
+        android:textColor="@color/white"
+        android:fontFamily="@font/font_family"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp_4"
+        android:paddingRight="8dp"
+        android:text="@string/explore_photo_tip"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="30dp"
+        android:elevation="4dp"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true" />
+
+</slideDampongAnimationLayout.SlideDampingAnimationLayout>
+
+
+

@@ -4,13 +4,11 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.RemoteViews;
 
 import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
-import com.example.dabutaizha.lines.mvp.BaseApplication;
 
 import static com.example.dabutaizha.lines.provider.WidgetModel.getWidgetTheme;
 

@@ -42,9 +42,25 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "2:8231666062669663445",
+      "lastPropertyId": "2:7347419434671923333",
+      "name": "PremissionModel",
+      "properties": [
+        {
+          "id": "1:2208604459326014988",
+          "name": "premissionModelId"
+        },
+        {
+          "id": "2:7347419434671923333",
+          "name": "PREMISSION_INPUT_SENTENCE"
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "1:4820802201149527437",
+  "lastEntityId": "2:8231666062669663445",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",

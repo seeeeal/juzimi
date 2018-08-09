@@ -36,54 +36,31 @@
         android:clickable="true"
         android:focusable="true">
 
-        <ImageView
-            android:id="@+id/app_account_img"
+        <TextView
+            android:id="@+id/app_add_personal_sentences"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/login_btn" />
+            android:background="@drawable/background_add_personal_sentences"
+            android:text="@string/easter_eggs_tis"
+            android:textColor="@color/white"
+            android:fontFamily="@font/font_family"
+            android:padding="10dp" />
 
         <TextView
             android:id="@+id/app_collect_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
             android:text="本地卡片数：80"
-            android:fontFamily="@font/font_family_second"
-            android:textSize="@dimen/sp_16"
+            android:fontFamily="@font/font_family"
+            android:textSize="16sp"
             android:textColor="@color/white"
-            android:layout_below="@id/app_account_img"
+            android:layout_below="@id/app_add_personal_sentences"
             android:layout_marginTop="@dimen/dp_10" />
 
     </RelativeLayout>
-
-    <!--<RelativeLayout-->
-        <!--android:id="@+id/app_login"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerInParent="true"-->
-        <!--android:visibility="visible"-->
-        <!--android:clickable="true"-->
-        <!--android:focusable="true">-->
-
-        <!--<ImageView-->
-            <!--android:id="@+id/app_login_img"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_alignParentTop="true"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:src="@drawable/login_btn" />-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="点击登陆"-->
-            <!--android:fontFamily="@font/font_family_second"-->
-            <!--android:textSize="@dimen/sp_12"-->
-            <!--android:textColor="@color/white"-->
-            <!--android:layout_below="@id/app_login_img"-->
-            <!--android:layout_marginTop="@dimen/dp_10" />-->
-
-    <!--</RelativeLayout>-->
 
 </RelativeLayout>

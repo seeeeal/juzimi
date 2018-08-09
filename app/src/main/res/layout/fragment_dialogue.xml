@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    android:paddingBottom="@dimen/default_height"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/fg_dialogue_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fg_dialogue_rcy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <RelativeLayout
+        android:id="@+id/fg_dialogue_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/fg_dialogue_error_img"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@drawable/refresh"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/fg_dialogue_error_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/retry_connect"
+            android:layout_below="@id/fg_dialogue_error_img"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_40"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

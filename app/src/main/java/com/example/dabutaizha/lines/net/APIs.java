@@ -3,6 +3,7 @@ package com.example.dabutaizha.lines.net;
 import com.example.dabutaizha.lines.bean.ArticleInfo;
 import com.example.dabutaizha.lines.bean.BlockInfo;
 import com.example.dabutaizha.lines.bean.CollectionInfo;
+import com.example.dabutaizha.lines.bean.DialogueInfo;
 import com.example.dabutaizha.lines.bean.SearchInfo;
 
 import io.reactivex.Observable;
@@ -46,7 +47,20 @@ public interface APIs {
     Observable<SearchInfo> getHotPageLike(@Query("page") int page);
 
     /**
-     *Description: 搜索接口
+     *Description: 经典对白
+     */
+    @GET("/meitumeiju/jingdianduibai") @Html
+    Observable<DialogueInfo> getDialoguePage(@Query("page") int page);
+
+    /**
+     *Description: 搜索接口(第一页)
+     */
+    @GET("/search/node/{content}") @Html
+    @Headers("Referer:http://www.juzimi.com/search/node")
+    Observable<SearchInfo> searchSentences(@Path("content") String content);
+
+    /**
+     *Description: 搜索接口(>1页)
      */
     @GET("/search/node/{content}") @Html
     @Headers("Referer:http://www.juzimi.com/search/node")

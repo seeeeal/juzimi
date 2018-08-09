@@ -1,9 +1,7 @@
 package com.example.dabutaizha.lines.net;
 
-import android.util.Log;
-
 import com.example.dabutaizha.lines.Constant;
-import com.example.dabutaizha.lines.mvp.BaseApplication;
+import com.example.dabutaizha.lines.mvp.view.BaseApplication;
 
 import java.io.File;
 import java.io.IOException;
@@ -93,6 +91,7 @@ public class ApiServices {
                                 .build();
                         return chain.proceed(request);
                     })
+                    // cookie本地持久化
                     .addInterceptor(new ReadCookiesInterceptor())
                     .addInterceptor(new SaveCookiesInterceptor())
                     .build();

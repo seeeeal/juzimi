@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.example.dabutaizha.lines.Constant;
-import com.example.dabutaizha.lines.mvp.BaseApplication;
+import com.example.dabutaizha.lines.mvp.view.BaseApplication;
 import com.example.dabutaizha.lines.mvp.contract.SplashActivityContract;
 
 /**

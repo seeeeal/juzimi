@@ -8,6 +8,7 @@ import com.example.dabutaizha.lines.bean.SearchInfo;
 import com.example.dabutaizha.lines.net.ApiServices;
 import com.example.dabutaizha.lines.mvp.contract.SearchResultActivityContract;
 
+import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -29,47 +30,57 @@ public class SearchResultModel implements SearchResultActivityContract.Model {
 
     @Override
     public void loadSearchData(String tag, int page) {
-        ApiServices.getAPIs().searchSentences(tag, page)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<SearchInfo>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
+        if (page == 0) {
+            ApiServices.getAPIs().searchSentences(tag)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(observable);
+        } else {
+            ApiServices.getAPIs().searchSentences(tag, page)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(observable);
+        }
 
-                    }
-
-                    @Override
-                    public void onNext(SearchInfo searchInfo) {
-
-                        if (searchInfo == null) {
-                            mPresenter.fail(ResUtil.getString(R.string.load_fail));
-                        }
-
-                        if (searchInfo != null && searchInfo.getSentencesItems() == null) {
-                            mPresenter.requestError();
-                        }
-
-                        if (searchInfo != null && searchInfo.getSentencesItems() != null) {
-                            mPresenter.showSearchData(searchInfo.getSentencesItems());
-                        }
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        String message = e.getMessage();
-
-                        if (message.contains("404")) {
-                            mPresenter.fail(ResUtil.getString(R.string.load_end));
-                        } else {
-                            mPresenter.requestError();
-                            mPresenter.fail(e.getMessage());
-                        }
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
     }
+
+    private Observer<SearchInfo> observable = new Observer<SearchInfo>() {
+        @Override
+        public void onSubscribe(Disposable d) {
+
+        }
+
+        @Override
+        public void onNext(SearchInfo searchInfo) {
+
+            if (searchInfo == null) {
+                mPresenter.fail(ResUtil.getString(R.string.load_fail));
+            }
+
+            if (searchInfo != null && searchInfo.getSentencesItems() == null) {
+                mPresenter.requestError();
+            }
+
+            if (searchInfo != null && searchInfo.getSentencesItems() != null) {
+                mPresenter.showSearchData(searchInfo.getSentencesItems());
+            }
+        }
+
+        @Override
+        public void onError(Throwable e) {
+            String message = e.getMessage();
+
+            if (message.contains("404")) {
+                mPresenter.fail(ResUtil.getString(R.string.load_end));
+            } else {
+                mPresenter.requestError();
+                mPresenter.fail(e.getMessage());
+            }
+        }
+
+        @Override
+        public void onComplete() {
+
+        }
+    };
 }

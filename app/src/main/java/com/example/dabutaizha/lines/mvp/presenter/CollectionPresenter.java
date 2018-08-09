@@ -1,15 +1,10 @@
 package com.example.dabutaizha.lines.mvp.presenter;
 
-import android.widget.RemoteViews;
-
 import com.example.dabutaizha.lines.ChineseCharToEnUtil;
-import com.example.dabutaizha.lines.Constant;
-import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.SentenceUtil;
 import com.example.dabutaizha.lines.bean.GroupSentencesInfo;
 import com.example.dabutaizha.lines.bean.SearchInfo;
 import com.example.dabutaizha.lines.bean.SentencesModel;
-import com.example.dabutaizha.lines.mvp.BaseApplication;
 import com.example.dabutaizha.lines.mvp.contract.CollectionActivityContract;
 import com.example.dabutaizha.lines.mvp.model.CollectionModel;
 

@@ -25,7 +25,6 @@ public class RelatedAdapter extends BaseQuickAdapter<ArticleInfo.RelatedWork, Ba
 
     @Override
     protected void convert(BaseViewHolder helper, ArticleInfo.RelatedWork item) {
-        Log.d("DFFF", "enter convert");
         if (item != null) {
             helper.setText(R.id.related_title, item.getRelatedWorkTitle());
         }

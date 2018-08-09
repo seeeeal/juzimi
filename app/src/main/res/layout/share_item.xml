@@ -22,7 +22,7 @@
         <ImageView
             android:id="@+id/share_card_top_image"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="180dp"
             android:scaleType="centerCrop"
             android:src="@drawable/card_default_bg"/>
 
@@ -115,7 +115,7 @@
             android:gravity="right"
             android:textColor="@color/colorAccent"
             android:textSize="10sp"
-            android:text="长按扫描二维码\n下载 一句APP"
+            android:text="长按扫描二维码\n下载 摘抄APP"
             android:lineSpacingExtra="5dp"/>
 
     </RelativeLayout>

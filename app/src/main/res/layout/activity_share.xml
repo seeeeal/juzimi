@@ -1,122 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<slideDampongAnimationLayout.SlideDampingAnimationLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/share_slide_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:fitsSystemWindows="true">
+    custom:bezier_curves_color="@color/gray_light"
+    custom:bezier_curves_type="quadratic_bezier_curves"
+    custom:allow_gesture="only_left">
 
-    <android.support.design.widget.AppBarLayout
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-    </android.support.design.widget.AppBarLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
 
-    <!--<include-->
+        </android.support.design.widget.AppBarLayout>
+
+        <!--<include-->
         <!--android:id="@+id/share_color"-->
         <!--layout="@layout/activity_share_color"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:layout_marginTop="?attr/actionBarSize"/>-->
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorAccent"
-        android:layout_marginTop="?attr/actionBarSize">
-
-        <LinearLayout
-            android:id="@+id/card_menu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true">
-
-            <TextView
-                android:id="@+id/share_save"
-                android:layout_width="0dp"
-                android:layout_height="52dp"
-                android:layout_weight="180"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:background="@drawable/category_ripple"
-                android:clickable="true"
-                android:focusable="true"
-                android:text="@string/save" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="20dp"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:layout_gravity="center_vertical"/>
-
-            <TextView
-                android:id="@+id/share_save_share"
-                android:layout_width="0dp"
-                android:layout_height="52dp"
-                android:layout_weight="180"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:background="@drawable/category_ripple"
-                android:text="@string/save_share"
-                android:clickable="true"
-                android:focusable="true"/>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="20dp"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:layout_gravity="center_vertical"/>
-
-            <TextView
-                android:id="@+id/share_bg_diy"
-                android:layout_width="0dp"
-                android:layout_height="52dp"
-                android:layout_weight="180"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:background="@drawable/category_ripple"
-                android:text="@string/jp_bg_diy"
-                android:clickable="true"
-                android:focusable="true"/>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="20dp"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:layout_gravity="center_vertical"/>
-
-            <TextView
-                android:id="@+id/share_title_col"
-                android:layout_width="0dp"
-                android:layout_height="52dp"
-                android:layout_weight="180"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:background="@drawable/category_ripple"
-                android:text="@string/share_title_col"
-                android:clickable="true"
-                android:focusable="true"/>
-
-        </LinearLayout>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/share_rcy"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/card_menu"
             android:background="@color/colorAccent"
-            android:overScrollMode="never">
-        </android.support.v7.widget.RecyclerView>
+            android:layout_marginTop="?attr/actionBarSize">
+
+            <LinearLayout
+                android:id="@+id/card_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true">
+
+                <TextView
+                    android:id="@+id/share_save"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="180"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:background="@drawable/category_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="@string/save" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/share_save_share"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="180"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:background="@drawable/category_ripple"
+                    android:text="@string/save_share"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/share_bg_diy"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="180"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:background="@drawable/category_ripple"
+                    android:text="@string/jp_bg_diy"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/share_title_col"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="180"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:background="@drawable/category_ripple"
+                    android:text="@string/share_title_col"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/share_rcy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/card_menu"
+                android:background="@color/colorAccent"
+                android:overScrollMode="never">
+            </android.support.v7.widget.RecyclerView>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
-</RelativeLayout>
+</slideDampongAnimationLayout.SlideDampingAnimationLayout>

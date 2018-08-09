@@ -25,6 +25,10 @@
     </group>
 
     <group android:id="@+id/nav_group_aux">
+
+        <item android:id="@+id/nav_menu_coffee"
+            android:title="@string/menu_coffee"/>
+
         <item
             android:id="@+id/nav_menu_open_source"
             android:title="@string/menu_open_source"/>

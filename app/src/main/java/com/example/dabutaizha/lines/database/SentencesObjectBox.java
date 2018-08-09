@@ -3,7 +3,7 @@ package com.example.dabutaizha.lines.database;
 
 import com.example.dabutaizha.lines.bean.SentencesModel;
 import com.example.dabutaizha.lines.bean.SentencesModel_;
-import com.example.dabutaizha.lines.mvp.BaseApplication;
+import com.example.dabutaizha.lines.mvp.view.BaseApplication;
 
 import java.text.Collator;
 import java.util.Comparator;
@@ -73,6 +73,13 @@ public class SentencesObjectBox {
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
 
+    public Observable<SentencesModel> getSentenceByRxJava(long id) {
+        return Observable.create((ObservableOnSubscribe<SentencesModel>) emitter -> {
+            emitter.onNext(getSentenceById(id));
+            emitter.onComplete();
+        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+    }
+
 
     /**
      *Description: objectBox原生方法
@@ -86,6 +93,11 @@ public class SentencesObjectBox {
             }
         });
         return builder.build().find();
+    }
+
+
+    private SentencesModel getSentenceById(long sentenceId) {
+        return mSentencesBox.get(sentenceId);
     }
 
     private boolean checkIsExist(int sentenceId) {

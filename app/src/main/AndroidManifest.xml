@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dabutaizha.lines" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.dabutaizha.lines">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -10,9 +11,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.example.dabutaizha.lines.mvp.BaseApplication"
+        tools:replace='android:theme'
+        android:name="com.example.dabutaizha.lines.mvp.view.BaseApplication"
         android:allowBackup="true"
-        android:icon="@drawable/icon_x"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -23,7 +25,7 @@
             android:name="android.max_aspect"
             android:value="2.1"/>
 
-        <activity android:name=".mvp.SplashActivity"
+        <activity android:name=".mvp.view.SplashActivity"
             android:icon="@drawable/icon_x"
             android:label="@string/app_name">
             <intent-filter>
@@ -32,14 +34,17 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.example.dabutaizha.lines.mvp.MainActivity"/>
-        <activity android:name=".mvp.CollectionActivity"/>
-        <activity android:name=".mvp.SearchResultActivity" />
-        <activity android:name=".mvp.ArticleActivity" />
-        <activity android:name=".mvp.ShareActivity"/>
-        <activity android:name=".mvp.OpenSourceActivity"/>
-        <activity android:name=".mvp.WebViewActivity"/>
-        <activity android:name=".mvp.WidgetActivity">
+        <activity android:name="com.example.dabutaizha.lines.mvp.view.MainActivity"/>
+        <activity android:name=".mvp.view.CollectionActivity"/>
+        <activity android:name=".mvp.view.SearchResultActivity" />
+        <activity android:name=".mvp.view.ArticleActivity" />
+        <activity android:name=".mvp.view.ShareActivity"/>
+        <activity android:name=".mvp.view.OpenSourceActivity"/>
+        <activity android:name=".mvp.view.WebViewActivity"/>
+        <activity android:name=".mvp.view.AddSentenceActivity"/>
+        <activity android:name=".mvp.view.ExplorePhotoActivity"/>
+
+        <activity android:name=".mvp.view.WidgetActivity">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
@@ -47,7 +52,6 @@
         <activity android:name=".wxapi.WXEntryActivity"
                   android:configChanges="keyboardHidden|orientation|screenSize"
                   android:exported="true"
-                  android:screenOrientation="portrait"
                   android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
 
         <receiver android:name=".provider.WidgetProvider">

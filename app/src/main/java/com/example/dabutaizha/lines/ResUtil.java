@@ -3,7 +3,7 @@ package com.example.dabutaizha.lines;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.example.dabutaizha.lines.mvp.BaseApplication;
+import com.example.dabutaizha.lines.mvp.view.BaseApplication;
 
 /**
  * Copyright (C) 2018 Unicorn, Inc.

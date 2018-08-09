@@ -2,11 +2,14 @@ package com.example.dabutaizha.lines.ImageUtil;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.net.Uri;
+import android.os.Environment;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
@@ -19,10 +22,14 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
-import com.example.dabutaizha.lines.mvp.BaseApplication;
+import com.example.dabutaizha.lines.mvp.view.BaseApplication;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /**
  * Copyright (C) 2018 Unicorn, Inc.
@@ -31,9 +38,12 @@ import java.io.File;
  */
 public class ImageLoader {
 
+    public static final int CARD = 0;
+    public static final int DIALOGUE = 1;
+
     // 根据资源id加载资源
     public static void loadImageByRes(Context context, ImageView imageView, int resID) {
-        if (((Activity)context).isFinishing()) {
+        if (context == null || ((Activity)context).isFinishing()) {
             return;
         }
 
@@ -41,14 +51,13 @@ public class ImageLoader {
                 .load(resID)
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .centerCrop()
-                .transform(new GlideRoundTransform(BaseApplication.getInstance(), 10, 0))
                 .transition(DrawableTransitionOptions.withCrossFade(200))
                 .into(imageView);
     }
 
     // 加载资源图片成圆角矩形
     public static void loadRoundImageByRes(Context context, ImageView imageView, int resID, int radiusTop, int radiusBottom) {
-        if (((Activity)context).isFinishing()) {
+        if (context == null || ((Activity)context).isFinishing()) {
             return;
         }
 
@@ -63,7 +72,7 @@ public class ImageLoader {
 
     // 加载资源图片成高斯模糊
     public static void loadTransformByRes(Context context, ImageView imageView, int resId) {
-        if (((Activity)context).isFinishing()) {
+        if (context == null || ((Activity)context).isFinishing()) {
             return;
         }
 
@@ -94,7 +103,7 @@ public class ImageLoader {
 
     // 根据路径加载资源
     public static void loadImageByPath(Context context, ImageView imageView, String path) {
-        if (((Activity)context).isFinishing()) {
+        if (context == null || ((Activity)context).isFinishing()) {
             return;
         }
 
@@ -110,7 +119,7 @@ public class ImageLoader {
 
     // 根据路径加载资源成圆角矩形
     public static void loadRoundImageByPath(Context context, ImageView imageView, String path, int radiusTop, int radiusBottom) {
-        if (((Activity)context).isFinishing()) {
+        if (context == null || ((Activity)context).isFinishing()) {
             return;
         }
 
@@ -125,7 +134,7 @@ public class ImageLoader {
 
     // 根据路径加载资源成高斯模糊
     public static void loadTransformByPath(Context context, ImageView imageView, String path) {
-        if (((Activity)context).isFinishing()) {
+        if (context == null || ((Activity)context).isFinishing()) {
             return;
         }
 
@@ -158,21 +167,21 @@ public class ImageLoader {
     // 加载网络图片
     public static void loadImageByUrl(Context context, ImageView imageView, String url) {
         // 防止在图片加载完成之前Activity视图已经销毁造成的crash
-        if (((Activity)context).isFinishing()) {
+        if (context == null || ((Activity)context).isFinishing()) {
             return;
         }
 
         GlideApp.with(context)
                 .load(url)
-                .centerCrop()
-                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-                .transition(DrawableTransitionOptions.withCrossFade(200))
+                .fitCenter()
+                .placeholder(R.color.black)
+                .dontTransform()
                 .into(imageView);
     }
 
-    // 加载网络图片成圆角矩形
+    // 加载网络图片成喵喵喵？
     public static void loadRoundByUrl(Context context, ImageView imageView, String url) {
-        if (((Activity)context).isFinishing()) {
+        if (context == null || ((Activity)context).isFinishing()) {
             return;
         }
 
@@ -182,7 +191,7 @@ public class ImageLoader {
                         GlideApp.with(context)
                                 .load(url.replace("file.juzimi.com", "www.juzimi.com/sites/default/files"))
                 )
-                .transform(new GlideRoundTransform(BaseApplication.getInstance(), 24))
+//                .transform(new GlideRoundTransform(BaseApplication.getInstance(), 24))
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .transition(DrawableTransitionOptions.withCrossFade(200))
                 .into(imageView);
@@ -190,7 +199,7 @@ public class ImageLoader {
 
     // 加载网络图片黑色渐变模糊
     public static void loadGradientByUrl(Context context, ImageView imageView, String url) {
-        if (((Activity)context).isFinishing()) {
+        if (context == null || ((Activity)context).isFinishing()) {
             return;
         }
 
@@ -222,7 +231,7 @@ public class ImageLoader {
     // 加载网络图片成高斯模糊
     public static void loadTransformByUrl(Context context, ImageView imageView, String url) {
         // 防止在图片加载完成之前Activity视图已经销毁造成的crash
-        if (((Activity)context).isFinishing()) {
+        if (context == null || ((Activity)context).isFinishing()) {
             return;
         }
 
@@ -252,9 +261,63 @@ public class ImageLoader {
                 });
     }
 
-    // 清理磁盘缓存
+    public static void getBitmapByUrl(Context context, String url) {
+
+        if (context == null || ((Activity)context).isFinishing()) {
+            return;
+        }
+
+        SimpleTarget<Bitmap> simpleTarget = new SimpleTarget<Bitmap>() {
+
+            @Override
+            public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+                saveImageToGallery(context, resource, DIALOGUE);
+            }
+        };
+
+        GlideApp.with(context)
+                .asBitmap()
+                .load(url)
+                .into(simpleTarget);
+    }
+
+    // 清理Glide磁盘缓存
     public static void clearDiskCache() {
         GlideApp.get(BaseApplication.getInstance()).clearDiskCache();
+    }
+
+    // 保存图片到本地
+    public static void saveImageToGallery(Context context, Bitmap bmp, int type) {
+        File appDir = null;
+        if (type == CARD) {
+            appDir = new File(Environment.getExternalStorageDirectory(), "Lines");
+        }
+        if (type == DIALOGUE) {
+            appDir = new File(Environment.getExternalStorageDirectory(), "LinesDialogue");
+        }
+
+        // 首先保存图片
+        if (!appDir.exists()) {
+            appDir.mkdir();
+        }
+
+        String fileName = System.currentTimeMillis() + ".jpg";
+        File file = new File(appDir, fileName);
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            bmp.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // 最后通知图库更新
+        String pathName = (type == CARD ? Constant.SAVE_CARD_PATH : Constant.SAVE_DIALOGUE_PATH);
+        Uri uri = Uri.fromFile(new File(pathName + fileName));
+        context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri));
     }
 
     private static Bitmap blurRenderScript(Context context, Bitmap smallBitmap, int radius) {
