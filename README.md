@@ -1,0 +1,87 @@
+# juzimi
+个人制作的句子迷APP,MVP架构,Okhttp + Retrofit + RxJava,数据库选用Object-box
+
+![](https://img.shields.io/badge/API-21%2B-green.svg)
+![](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+
+# 前言
+每次看完喜欢的电影都会忍不住去豆瓣再看看别人写的影评，或者去句子迷搜下有哪些经典对白，时间长了发现为什么句子迷没有像豆瓣一样有一个APP，可以方便的搜索分享内容，于是自己动手写了一个，并不时更新维护。
+
+# 3.3.0更新内容
+图片区可以点击浏览大图了 且加入了手势操作
+
+全局加入了手势动画侧滑返回
+
+# 主要功能
+最近上传
+
+今日热门
+
+今日推荐
+
+最受欢迎
+
+截图区
+
+作品分类板块(电影、图书、诗词等)
+
+搜索
+
+自定义卡片
+
+本地保存与收藏
+
+微信分享
+
+桌面插件展示
+
+# 界面展示
+<img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG17.png" width="300" hegiht="120" alt="pic0"/>
+
+# 依赖框架
+
+[ButterKnife](https://github.com/JakeWharton/butterknife)
+
+[RxJava](https://github.com/ReactiveX/RxJava)
+
+[RxAndroid](https://github.com/ReactiveX/RxAndroid)
+
+[Retrofit](https://github.com/square/retrofit/)
+
+[Fruit](https://github.com/ghuiii/Fruit)
+
+[Object-Box](https://github.com/objectbox/objectbox-java)
+
+[Glied](https://github.com/bumptech/glide)
+
+[PictureSelect](https://github.com/LuckSiege/PictureSelector)
+
+[BiliBiliShare](https://github.com/Bilibili/BiliShare)
+
+[EasyPermission](https://github.com/googlesamples/easypermissions)
+
+[BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelpe)
+
+[ImmersionBar](https://github.com/gyf-dev/ImmersionBar)
+
+[AndroidTagGroup](https://github.com/2dxgujun/AndroidTagGroup)
+
+[BGABanner-Android](https://github.com/bingoogolapple/BGABanner-Android)
+
+[Stetho](https://github.com/facebook/stetho)
+
+[SlideDampingAnimationLayout](https://github.com/dabutaizha/SlideDampingAnimationLayout)
+
+# 下载地址
+
+<img src="http://p3z4bc5an.bkt.clouddn.com/1533777988.png" width="100" height="100" alt="扫描下载"/>
+
+# 关于我
+
+Email:dabutaizha@163.com
+
+Home:dbtz.life
+
+# 声明
+
+该项目纯属兴趣爱好仅供学习交流使用，不得用于商业用途！
