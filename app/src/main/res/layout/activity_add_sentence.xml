@@ -10,7 +10,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     app:bezier_curves_color="@color/black"
-    app:bezier_curves_type="quadratic_bezier_curves"
+    app:bezier_curves_type="high_order_bezier_curves"
     app:allow_gesture="only_left">
 
     <RelativeLayout

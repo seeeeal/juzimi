@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     custom:bezier_curves_color="@color/gray_light"
-    custom:bezier_curves_type="quadratic_bezier_curves"
+    custom:bezier_curves_type="high_order_bezier_curves"
     custom:allow_gesture="only_left">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"

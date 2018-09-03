@@ -193,7 +193,12 @@ public class MainActivity extends BaseActivity implements MainActivityContract.V
                 }
                 break;
             case R.id.nav_menu_update :
-                mPresenter.getRecentVersionInfo();
+                // 暂停酷安升级逻辑
+                // mPresenter.getRecentVersionInfo();
+
+                Bundle bundle = new Bundle();
+                bundle.putString(Constant.WEBVIEW_URL, ResUtil.getString(R.string.github_project_url));
+                WebViewActivity.startActivity(MainActivity.this, bundle);
                 break;
             case R.id.nav_menu_coffee :
                 new RewardDialog(this, R.style.rewardDialog).show();

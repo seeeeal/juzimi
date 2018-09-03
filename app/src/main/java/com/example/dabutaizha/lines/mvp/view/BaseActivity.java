@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.example.dabutaizha.lines.ActivityManager;
+import com.example.dabutaizha.lines.R;
+import com.example.dabutaizha.lines.ResUtil;
 import com.gyf.barlibrary.ImmersionBar;
 
 import butterknife.ButterKnife;
@@ -30,13 +33,23 @@ public abstract class BaseActivity extends AppCompatActivity {
         mContext = this;
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
-
         setContentView(getPageLayoutID());
         ImmersionBar.with(this)
                 .transparentBar()
                 .statusBarDarkFont(true)
                 .init();
+
+        //隐藏状态栏
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        //导航栏设为黑色
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.black));
+        //自动隐藏导航栏
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
         ActivityManager.addActivity(this);
         ButterKnife.bind(this);
         initData();

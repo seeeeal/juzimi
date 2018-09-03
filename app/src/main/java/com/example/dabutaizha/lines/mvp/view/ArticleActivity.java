@@ -77,18 +77,6 @@ public class ArticleActivity extends BaseActivity implements ArticleActivityCont
     }
 
     /**
-     *Description: 重写onCreate隐藏状态栏
-     */
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ImmersionBar.with(this)
-                .fullScreen(true)
-                .hideBar(BarHide.FLAG_HIDE_STATUS_BAR)
-                .init();
-    }
-
-    /**
      *Description: BaseActivity
      */
     @Override

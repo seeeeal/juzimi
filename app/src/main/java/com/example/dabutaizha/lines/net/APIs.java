@@ -56,14 +56,14 @@ public interface APIs {
      *Description: 搜索接口(第一页)
      */
     @GET("/search/node/{content}") @Html
-    @Headers("Referer:http://www.juzimi.com/search/node")
+    @Headers("Referer:http://www.juzimi.com/search/node/%s/page=-1")
     Observable<SearchInfo> searchSentences(@Path("content") String content);
 
     /**
      *Description: 搜索接口(>1页)
      */
     @GET("/search/node/{content}") @Html
-    @Headers("Referer:http://www.juzimi.com/search/node")
+    @Headers("Referer:http://www.juzimi.com/search/node/%s/page=-1")
     Observable<SearchInfo> searchSentences(@Path("content") String content, @Query("page") int page);
 
     /**

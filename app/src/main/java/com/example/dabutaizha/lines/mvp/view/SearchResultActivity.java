@@ -66,15 +66,6 @@ public class SearchResultActivity extends BaseActivity implements SearchResultAc
         context.startActivity(intent);
     }
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ImmersionBar.with(this)
-                .fullScreen(true)
-                .hideBar(BarHide.FLAG_HIDE_STATUS_BAR)
-                .init();
-    }
-
     /**
      *Description: BaseActivity
      */
