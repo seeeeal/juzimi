@@ -113,6 +113,19 @@ public class HotPageItemFragment extends BaseFragment implements HotPageItemFrag
             ShareActivity.startActivity(getActivity(), bundle);
         });
 
+        mHeaderImg.setOnClickListener(view -> {
+            String content = mHeaderTag.getText().toString().trim();
+            if (content.length() > 0) {
+                SearchInfo.SentencesItem item = SentenceUtil.buildOnlyContentSentence(content);
+                item = SentenceUtil.completeSentence(item);
+
+                Bundle bundle = new Bundle();
+                bundle.putParcelable(Constant.SHARE_INFO, item);
+
+                ShareActivity.startActivity(getActivity(), bundle);
+            }
+        });
+
         mErrorLayout.setOnClickListener(view -> {
             mRefreshLayout.setRefreshing(true);
             mPresenter.pullToRefresh(false);

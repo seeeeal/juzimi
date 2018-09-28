@@ -6,6 +6,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.SentenceItemRegexUtil;
 
 import java.util.List;
 
@@ -29,13 +30,7 @@ public class HotPageSentencesAdapter extends BaseQuickAdapter<SearchInfo.Sentenc
         helper.setText(R.id.item_article, article);
         helper.setText(R.id.item_writer, writer);
 
-        // 把中文字符串的空格改为换行
-        String content = item.getContent().trim();
-        String regex = ".*[a-zA-Z]+.*";
-        if (!content.matches(regex)) {
-            content = content.replace(" ", "\n");
-        }
-
+        String content = SentenceItemRegexUtil.getFormatItemContent(item);
         helper.setText(R.id.item_content, content);
     }
 }

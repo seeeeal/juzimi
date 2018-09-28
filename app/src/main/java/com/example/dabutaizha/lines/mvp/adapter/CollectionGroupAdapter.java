@@ -5,6 +5,7 @@ import com.chad.library.adapter.base.BaseSectionQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.bean.GroupSentencesInfo;
+import com.example.dabutaizha.lines.SentenceItemRegexUtil;
 
 import java.util.List;
 
@@ -34,12 +35,7 @@ public class CollectionGroupAdapter extends BaseSectionQuickAdapter<GroupSentenc
     protected void convert(BaseViewHolder helper, GroupSentencesInfo item) {
         helper.setText(R.id.item_writer, item.t.getWriter());
 
-        // 把中文字符串的空格改为换行
-        String content = item.t.getContent().trim();
-        String regex = ".*[a-zA-Z]+.*";
-        if (!content.matches(regex)) {
-            content = content.replace(" ", "\n");
-        }
+        String content = SentenceItemRegexUtil.getFormatItemContent(item.t);
         helper.setText(R.id.item_content, content);
 
         helper.addOnClickListener(R.id.item_collect_bg);

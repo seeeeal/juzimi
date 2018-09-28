@@ -79,6 +79,10 @@
     <string name="question">？</string>
     <string name="explore_photo_tip">屏幕边缘左滑返回 右滑保存</string>
     <string name="github_project_url">https://github.com/dabutaizha/juzimi/blob/master/README.md</string>
+    <string name="widget_theme_gray">皓月灰</string>
+    <string name="widget_theme_translate">纯透明</string>
+    <string name="theme_default_tip">皓月灰-已选择</string>
+    <string name="theme_translate_tip">纯透明-已选择</string>
 
     <string-array name="tab_item">
         <item>广场</item>

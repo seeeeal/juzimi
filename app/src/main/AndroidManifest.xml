@@ -60,7 +60,7 @@
                 android:resource="@xml/widget_sentence" />
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.seewo.homewidgets.action.CLICK" />
+                <action android:name="WIDGET_CLICKED"/>
             </intent-filter>
         </receiver>
 

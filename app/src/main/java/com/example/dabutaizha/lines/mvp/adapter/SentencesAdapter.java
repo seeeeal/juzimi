@@ -6,6 +6,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.SentenceItemRegexUtil;
 
 import java.util.List;
 
@@ -26,12 +27,8 @@ public class SentencesAdapter extends BaseQuickAdapter<SearchInfo.SentencesItem,
         String title = item.getArticle() == null ? "未知" : item.getArticle();
         helper.setText(R.id.search_item_title, title);
 
-        // 把中文字符串的空格改为换行
-        String content = item.getContent().trim();
-        String regex = ".*[a-zA-Z]+.*";
-        if (!content.matches(regex)) {
-            content = content.replace(" ", "\n");
-        }
+        String content = SentenceItemRegexUtil.getFormatItemContent(item);
+
         helper.setText(R.id.search_item_content, content);
 
         String likeCount = item.getCommentCount() == null ? "0" : item.getLike();

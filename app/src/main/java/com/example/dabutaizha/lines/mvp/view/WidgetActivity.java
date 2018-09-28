@@ -22,6 +22,7 @@ import com.example.dabutaizha.lines.mvp.adapter.CollectionGroupAdapter;
 import com.example.dabutaizha.lines.mvp.contract.CollectionActivityContract;
 import com.example.dabutaizha.lines.mvp.presenter.CollectionPresenter;
 import com.example.dabutaizha.lines.provider.WidgetModel;
+import com.example.dabutaizha.lines.SentenceItemRegexUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,12 +58,11 @@ public class WidgetActivity extends BaseActivity implements CollectionActivityCo
         Bundle extras = intent.getExtras();
         if (extras != null) {
             mAppWidgetId = extras.getInt(
-                    AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
+            AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
         }
 
         if (mAppWidgetId == AppWidgetManager.INVALID_APPWIDGET_ID) {
             finish();
-            return;
         }
     }
 
@@ -101,27 +101,14 @@ public class WidgetActivity extends BaseActivity implements CollectionActivityCo
 
         mGroupAdapter.setOnItemChildClickListener((adapter, view, position) -> {
             GroupSentencesInfo info = (GroupSentencesInfo) adapter.getItem(position);
-
-            AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(mContext);
-
-            RemoteViews remoteViews = null;
-            int widgetTheme = WidgetModel.getWidgetTheme();
-            if (widgetTheme == Constant.THEME_DEFAULT) {
-                remoteViews = new RemoteViews(BaseApplication.getInstance().getPackageName(), R.layout.widget_sentence_default);
-            } else {
-                remoteViews = new RemoteViews(BaseApplication.getInstance().getPackageName(), R.layout.widget_sentence_transparent);
-            }
-
             SearchInfo.SentencesItem item = SentenceUtil.completeSentence(info.t);
-            // 把中文字符串的空格改为换行
-            String content = item.getContent().trim();
-            String regex = ".*[a-zA-Z]+.*";
-            if (!content.matches(regex)) {
-                content = content.replace(" ", "\n");
-            }
+            String content = SentenceItemRegexUtil.getFormatItemContent(item);
+
+            RemoteViews remoteViews = getRemoteViews();
             remoteViews.setTextViewText(R.id.widget_small_content, content);
             remoteViews.setTextViewText(R.id.widget_small_title, item.getArticle());
 
+            AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(mContext);
             appWidgetManager.partiallyUpdateAppWidget(mAppWidgetId, remoteViews);
 
             Intent resultValue = new Intent();
@@ -154,9 +141,19 @@ public class WidgetActivity extends BaseActivity implements CollectionActivityCo
         }
     }
 
-
     @Override
     public void showMessage(String msg) {
         ResUtil.showToast(this, msg);
+    }
+
+    private RemoteViews getRemoteViews() {
+        RemoteViews remoteViews = null;
+        int widgetTheme = WidgetModel.getWidgetTheme();
+        if (widgetTheme == Constant.THEME_DEFAULT) {
+            remoteViews = new RemoteViews(BaseApplication.getInstance().getPackageName(), R.layout.widget_sentence_default);
+        } else {
+            remoteViews = new RemoteViews(BaseApplication.getInstance().getPackageName(), R.layout.widget_sentence_transparent);
+        }
+        return remoteViews;
     }
 }

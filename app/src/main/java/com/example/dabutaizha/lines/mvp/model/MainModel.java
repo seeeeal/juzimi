@@ -100,12 +100,12 @@ public class MainModel implements MainActivityContract.Model {
 
     @Override
     public void querySentencesSize() {
-        SentencesObjectBox.getInstance().findAllByRxJava().subscribe(new Consumer<List<SentencesModel>>() {
-            @Override
-            public void accept(List<SentencesModel> sentencesModels) throws Exception {
-                if (sentencesModels != null) {
-                    mPresenter.refreshView(sentencesModels.size());
-                }
+        SentencesObjectBox
+                .getInstance()
+                .findAllByRxJava()
+                .subscribe(sentencesModels -> {
+            if (sentencesModels != null) {
+                mPresenter.refreshView(sentencesModels.size());
             }
         });
     }

@@ -11,6 +11,7 @@ import com.example.dabutaizha.lines.ImageUtil.ImageLoader;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.bean.SearchInfo;
 import com.example.dabutaizha.lines.database.SentencesObjectBox;
+import com.example.dabutaizha.lines.SentenceItemRegexUtil;
 
 import java.util.List;
 
@@ -49,12 +50,7 @@ public class ShareAdapter extends BaseQuickAdapter<SearchInfo.SentencesItem, Bas
         helper.setText(R.id.share_card_top_title, item.getArticle());
         helper.setText(R.id.share_card_top_author, item.getWriter());
 
-        // 把中文字符串的空格改为换行
-        String content = item.getContent().trim();
-        String regex = ".*[a-zA-Z]+.*";
-        if (!content.matches(regex)) {
-            content = content.replace(" ", "\n");
-        }
+        String content = SentenceItemRegexUtil.getFormatItemContent(item);
         helper.setText(R.id.share_card_top_content, content);
 
         helper.addOnClickListener(R.id.share_card_top_collect);

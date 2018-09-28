@@ -30,6 +30,7 @@ import com.example.dabutaizha.lines.mvp.view.dialog.BaseDialog;
 import com.example.dabutaizha.lines.mvp.view.dialog.BaseDialogInterface;
 import com.example.dabutaizha.lines.mvp.view.dialog.RewardDialog;
 import com.example.dabutaizha.lines.mvp.view.dialog.UpdateDialog;
+import com.example.dabutaizha.lines.mvp.view.dialog.WidgetThemeDialog;
 import com.example.dabutaizha.lines.provider.WidgetModel;
 
 import java.util.List;
@@ -165,21 +166,7 @@ public class MainActivity extends BaseActivity implements MainActivityContract.V
                 startActivity(collectionIntent);
                 break;
             case R.id.nav_menu_widget_theme:
-                new BaseDialog(this, R.style.aboutDialog,
-                        "切换插件主题",
-                        "全透明主题",
-                        "默认主题",
-                        new BaseDialogInterface() {
-                            @Override
-                            public void positive() {
-                                WidgetModel.saveWidgetTheme(Constant.TRANSPARENT);
-                            }
-
-                            @Override
-                            public void negative() {
-                                WidgetModel.saveWidgetTheme(Constant.THEME_DEFAULT);
-                            }
-                        }).show();
+                new WidgetThemeDialog(this, R.style.aboutDialog).show();
                 break;
             case R.id.nav_menu_clear_cache :
                 mPresenter.clearCache();

@@ -1,5 +1,7 @@
 package com.example.dabutaizha.lines;
 
+import android.util.Log;
+
 import com.example.dabutaizha.lines.bean.SearchInfo;
 import com.example.dabutaizha.lines.bean.SentencesModel;
 
@@ -20,6 +22,24 @@ public class SentenceUtil {
 
         return sentenceItem;
 
+    }
+
+    public static SearchInfo.SentencesItem buildOnlyContentSentence(String content) {
+        String id = String.valueOf(System.currentTimeMillis()).substring(4, 13);
+        Log.d("dabutaizha", System.currentTimeMillis() + "");
+        Log.d("dabutaizha", "id : " + id);
+        SearchInfo.SentencesItem item = new SearchInfo.SentencesItem(
+                id,
+                content,
+                null,
+                null,
+                "0",
+                "",
+                "0",
+                "",
+                System.currentTimeMillis()
+        );
+        return item;
     }
 
     public static SentencesModel item2model(SearchInfo.SentencesItem sentenceItem) {

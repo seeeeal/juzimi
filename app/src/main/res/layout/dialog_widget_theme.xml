@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/red_bg"
+    android:paddingStart="2dp">
+
+    <LinearLayout
+        android:id="@+id/widget_theme_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/share_crad_white">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:text="@string/widget_theme_gray"
+            android:textSize="28sp"
+            android:gravity="center_vertical|end"
+            android:padding="@dimen/dp_10"
+            android:fontFamily="@font/font_family"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/widget_theme_translate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:text="@string/widget_theme_translate"
+            android:textSize="28sp"
+            android:padding="@dimen/dp_10"
+            android:fontFamily="@font/font_family"
+            android:gravity="center_vertical|end"
+            android:textColor="@color/black_translate"/>
+
+    </LinearLayout>
+
+</LinearLayout>
