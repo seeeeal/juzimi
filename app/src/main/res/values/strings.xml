@@ -158,6 +158,7 @@
         <item>LuckSiege</item>
         <item>facebook</item>
         <item>objectbox</item>
+        <item>SlideDampingAnimationLayout</item>
     </string-array>
 
     <string-array name="os_intro">
@@ -176,6 +177,7 @@
         <item>Picture Selector Library for Android</item>
         <item>Stetho is a debug bridge for Android applications, enabling the powerful Chrome Developer Tools and much more.</item>
         <item>ObjectBox is a superfast mobile database for objects</item>
+        <item>侧滑回退布局控件</item>
     </string-array>
 
     <string-array name="os_link">
@@ -194,6 +196,7 @@
         <item>https://github.com/LuckSiege/PictureSelector</item>
         <item>https://github.com/facebook/stetho</item>
         <item>https://github.com/objectbox/objectbox-java</item>
+        <item>https://github.com/dabutaizha/SlideDampingAnimationLayout</item>
     </string-array>
 
     <string-array name="hotpage_tag">

@@ -69,8 +69,6 @@ dependencies {
     implementation 'com.github.chrisbanes:PhotoView:2.1.4'
     // 图片选择控件
     implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.1.9'
-    // TabLayout
-    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
 
     // 调试工具
     compile 'com.facebook.stetho:stetho:1.5.0'

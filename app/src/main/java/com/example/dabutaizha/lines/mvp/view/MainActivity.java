@@ -38,7 +38,6 @@ import com.example.dabutaizha.lines.mvp.view.dialog.RewardDialog;
 import com.example.dabutaizha.lines.mvp.view.dialog.UpdateDialog;
 import com.example.dabutaizha.lines.mvp.view.dialog.WidgetThemeDialog;
 import com.example.dabutaizha.lines.provider.WidgetModel;
-import com.flyco.tablayout.SlidingTabLayout;
 
 import java.util.List;
 import java.util.concurrent.CyclicBarrier;
