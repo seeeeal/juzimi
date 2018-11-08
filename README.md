@@ -52,7 +52,7 @@
 一键换肤
 
 # 界面展示
-<img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG17.png" width="300" hegiht="120" alt="pic0"/>
+<img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG17.png" width="216" /> <img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG51.png" width="216" /> <img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG50.png" width="216" /> <img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG49.png" width="216" /> <img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG52.png" width="216" />
 
 # 依赖框架
 
