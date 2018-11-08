@@ -1,9 +1,7 @@
 package com.example.dabutaizha.lines.mvp.contract;
 
-import android.widget.RemoteViews;
-
-import com.example.dabutaizha.lines.bean.GroupSentencesInfo;
-import com.example.dabutaizha.lines.bean.SentencesModel;
+import com.example.dabutaizha.lines.bean.info.GroupSentencesInfo;
+import com.example.dabutaizha.lines.bean.model.SentencesModel;
 
 import java.util.List;
 

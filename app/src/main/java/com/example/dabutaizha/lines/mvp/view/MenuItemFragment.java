@@ -11,7 +11,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
-import com.example.dabutaizha.lines.bean.BlockInfoItem;
+import com.example.dabutaizha.lines.bean.info.BlockInfoItem;
 import com.example.dabutaizha.lines.mvp.adapter.CategoryAdapter;
 import com.example.dabutaizha.lines.mvp.contract.MenuItemFragmentContract;
 import com.example.dabutaizha.lines.mvp.presenter.MenuItemPresenter;
@@ -28,6 +28,8 @@ import butterknife.BindView;
  */
 public class MenuItemFragment extends BaseFragment implements MenuItemFragmentContract.View {
 
+    @BindView(R.id.fg_menu_background_layout)
+    public RelativeLayout mBackgroundLayout;
     @BindView(R.id.fg_menu_refresh)
     public SwipeRefreshLayout mRefreshLayout;
     @BindView(R.id.fg_menu_rcy)
@@ -127,6 +129,23 @@ public class MenuItemFragment extends BaseFragment implements MenuItemFragmentCo
             mPresenter.pullToRefresh(false);
             mErrorLayout.setVisibility(View.GONE);
         });
+    }
+
+    @Override
+    protected void initTheme(int themeId) {
+        mPresenter.notifyDataThemeChanged(mCategoryAdapter.getData(), themeId);
+        mCategoryAdapter.notifyDataSetChanged();
+
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                break;
+            case Constant.NIGHT:
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.hotpage_content_bg));
+                break;
+            default:
+                break;
+        }
     }
 
     @Override

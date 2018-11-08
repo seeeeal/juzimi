@@ -2,8 +2,9 @@ package com.example.dabutaizha.lines.mvp.presenter;
 
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
-import com.example.dabutaizha.lines.bean.OpenSourceInfo;
+import com.example.dabutaizha.lines.bean.info.OpenSourceInfo;
 import com.example.dabutaizha.lines.mvp.contract.OpenSourceContract;
+import com.example.dabutaizha.lines.wxapi.AppThemeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +40,7 @@ public class OpenSourcePresenter implements OpenSourceContract.Presenter {
             info.setOpenSourceAuthor(authorArray[i]);
             info.setOpenSourceIntro(introArray[i]);
             info.setOpenSourceLink(linkArray[i]);
+            info.setmItemUIType(AppThemeUtils.getCurrentAppTheme());
             mSourceInfoList.add(info);
         }
     }

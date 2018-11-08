@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:background="@color/background_night">
+
+        <TextView
+            android:id="@+id/dialog_reward_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:paddingTop="65dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:fontFamily="@font/font_family"
+            android:textSize="20sp"
+            android:lineSpacingExtra="10dp" />
+
+        <Button
+            android:id="@+id/dialog_reward_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/orange_dark"
+            android:textColor="@color/white"
+            android:fontFamily="@font/font_family"
+            android:textSize="20sp"
+            android:text="@string/jump_to_zfb"
+            android:layout_below="@id/dialog_reward_tv"
+            android:layout_marginBottom="15dp"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/dialog_reward_img"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/reward_x" />
+
+</RelativeLayout>

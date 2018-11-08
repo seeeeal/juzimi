@@ -11,19 +11,15 @@ import android.os.Build;
 import com.example.dabutaizha.lines.FileCacheUtils;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
-import com.example.dabutaizha.lines.bean.SentencesModel;
-import com.example.dabutaizha.lines.bean.VersionInfo;
+import com.example.dabutaizha.lines.bean.info.VersionInfo;
 import com.example.dabutaizha.lines.database.SentencesObjectBox;
 import com.example.dabutaizha.lines.net.ApiServices;
 import com.example.dabutaizha.lines.mvp.view.BaseApplication;
 import com.example.dabutaizha.lines.mvp.contract.MainActivityContract;
 
-import java.util.List;
-
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**

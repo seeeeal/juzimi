@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.ContentLoadingProgressBar;
@@ -24,14 +23,13 @@ import com.example.dabutaizha.lines.ImageUtil.ImageLoader;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
 import com.example.dabutaizha.lines.SentenceUtil;
-import com.example.dabutaizha.lines.bean.ArticleInfo;
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.ArticleInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 import com.example.dabutaizha.lines.mvp.adapter.RelatedAdapter;
 import com.example.dabutaizha.lines.mvp.adapter.SentencesAdapter;
 import com.example.dabutaizha.lines.mvp.contract.ArticleActivityContract;
 import com.example.dabutaizha.lines.mvp.presenter.ArticlePresenter;
-import com.gyf.barlibrary.BarHide;
-import com.gyf.barlibrary.ImmersionBar;
+import com.example.dabutaizha.lines.wxapi.AppThemeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +48,8 @@ public class ArticleActivity extends BaseActivity implements ArticleActivityCont
 
     @BindView(R.id.article_sliding_layout)
     public SlideDampingAnimationLayout mSlideAnimationLayout;
+    @BindView(R.id.article_background_layout)
+    public RelativeLayout mBackgroundLayout;
     @BindView(R.id.search_result_coord)
     public CollapsingToolbarLayout mCollLayout;
     @BindView(R.id.toolbar)
@@ -160,6 +160,22 @@ public class ArticleActivity extends BaseActivity implements ArticleActivityCont
     }
 
     @Override
+    protected void initTheme(int themeId) {
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mCollLayout.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                break;
+            case Constant.NIGHT:
+                mCollLayout.setBackgroundColor(ResUtil.getColor(R.color.hotpage_sentences_night_bg));
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.hotpage_sentences_night_bg));
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
     protected void process() {
         mPresenter.process(mArticleId);
     }
@@ -182,7 +198,8 @@ public class ArticleActivity extends BaseActivity implements ArticleActivityCont
         ImageLoader.loadTransformByUrl(this, mImgBg, pageUrl);
 
         mAdapter.removeAllHeaderView();
-        View headerView = LayoutInflater.from(this).inflate(R.layout.article_header, null);
+        View headerView = getHeaderView();
+
         mAdapter.addHeaderView(headerView);
 
         TextView tvIntro = headerView.findViewById(R.id.article_intro_content);
@@ -199,6 +216,17 @@ public class ArticleActivity extends BaseActivity implements ArticleActivityCont
 
         mRelatedAdapter.setNewData(works);
         mRelatedAdapter.notifyDataSetChanged();
+    }
+
+    private View getHeaderView() {
+        View view = null;
+        if (AppThemeUtils.getCurrentAppTheme() == Constant.DAY_TIME) {
+            view = LayoutInflater.from(this).inflate(R.layout.article_header, null);
+        }
+        if (AppThemeUtils.getCurrentAppTheme() == Constant.NIGHT) {
+            view = LayoutInflater.from(this).inflate(R.layout.article_header_night, null);
+        }
+        return view;
     }
 
     @Override

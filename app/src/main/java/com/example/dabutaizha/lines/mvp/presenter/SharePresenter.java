@@ -10,7 +10,7 @@ import android.util.LruCache;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.example.dabutaizha.lines.bean.SentencesModel;
+import com.example.dabutaizha.lines.bean.model.SentencesModel;
 import com.example.dabutaizha.lines.mvp.adapter.ShareAdapter;
 import com.example.dabutaizha.lines.mvp.contract.ShareContract;
 import com.example.dabutaizha.lines.mvp.model.ShareModel;

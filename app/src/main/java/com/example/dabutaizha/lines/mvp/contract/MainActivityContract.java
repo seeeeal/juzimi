@@ -5,8 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
-import com.example.dabutaizha.lines.bean.VersionInfo;
+import com.example.dabutaizha.lines.bean.info.VersionInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**

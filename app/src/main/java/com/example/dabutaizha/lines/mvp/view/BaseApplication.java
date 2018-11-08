@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.example.dabutaizha.lines.ResUtil;
 
-import com.example.dabutaizha.lines.bean.MyObjectBox;
+import com.example.dabutaizha.lines.bean.model.MyObjectBox;
 import com.facebook.stetho.Stetho;
 
 import io.objectbox.BoxStore;

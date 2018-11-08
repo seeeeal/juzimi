@@ -1,8 +1,9 @@
 package com.example.dabutaizha.lines.mvp.presenter;
 
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 import com.example.dabutaizha.lines.mvp.contract.SearchResultActivityContract;
 import com.example.dabutaizha.lines.mvp.model.SearchResultModel;
+import com.example.dabutaizha.lines.wxapi.AppThemeUtils;
 
 import java.util.List;
 
@@ -43,6 +44,10 @@ public class SearchResultPresenter implements SearchResultActivityContract.Prese
 
     @Override
     public void showSearchData(List<SearchInfo.SentencesItem> itemList) {
+        for (SearchInfo.SentencesItem item : itemList) {
+            item.setItemUIType(AppThemeUtils.getCurrentAppTheme());
+        }
+
         mView.updateList(itemList);
     }
 

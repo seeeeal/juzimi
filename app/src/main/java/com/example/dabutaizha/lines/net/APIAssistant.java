@@ -1,6 +1,6 @@
 package com.example.dabutaizha.lines.net;
 
-import com.example.dabutaizha.lines.bean.PictureInfo;
+import com.example.dabutaizha.lines.bean.info.PictureInfo;
 
 import io.reactivex.Observable;
 import me.ghui.retrofit.converter.annotations.Html;

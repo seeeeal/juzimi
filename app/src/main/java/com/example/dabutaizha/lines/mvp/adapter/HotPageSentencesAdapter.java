@@ -2,11 +2,14 @@ package com.example.dabutaizha.lines.mvp.adapter;
 
 import android.support.annotation.Nullable;
 
+import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 import com.example.dabutaizha.lines.SentenceItemRegexUtil;
+import com.example.dabutaizha.lines.wxapi.AppThemeUtils;
 
 import java.util.List;
 
@@ -16,14 +19,17 @@ import java.util.List;
  * Created by dabutaizha on 2018/1/23 上午11:50.
  */
 
-public class HotPageSentencesAdapter extends BaseQuickAdapter<SearchInfo.SentencesItem, BaseViewHolder> {
+public class HotPageSentencesAdapter extends BaseMultiItemQuickAdapter<SearchInfo.SentencesItem, BaseViewHolder> {
 
     public HotPageSentencesAdapter(@Nullable List<SearchInfo.SentencesItem> data) {
-        super(R.layout.sentence_item, data);
+        super(data);
+        addItemType(Constant.DAY_TIME, R.layout.sentence_item);
+        addItemType(Constant.NIGHT, R.layout.sentent_item_night);
     }
 
     @Override
     protected void convert(BaseViewHolder helper, SearchInfo.SentencesItem item) {
+
         String article = item.getArticle() == null ? "未知" : item.getArticle();
         String writer = item.getWriter() == null ? "佚名" : item.getWriter();
 

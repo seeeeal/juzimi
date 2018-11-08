@@ -2,9 +2,9 @@ package com.example.dabutaizha.lines.mvp.presenter;
 
 import com.example.dabutaizha.lines.ChineseCharToEnUtil;
 import com.example.dabutaizha.lines.SentenceUtil;
-import com.example.dabutaizha.lines.bean.GroupSentencesInfo;
-import com.example.dabutaizha.lines.bean.SearchInfo;
-import com.example.dabutaizha.lines.bean.SentencesModel;
+import com.example.dabutaizha.lines.bean.info.GroupSentencesInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
+import com.example.dabutaizha.lines.bean.model.SentencesModel;
 import com.example.dabutaizha.lines.mvp.contract.CollectionActivityContract;
 import com.example.dabutaizha.lines.mvp.model.CollectionModel;
 

@@ -5,14 +5,15 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.ImageUtil.ImageLoader;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
 import com.example.dabutaizha.lines.SentenceUtil;
-import com.example.dabutaizha.lines.bean.SearchInfo;
-import com.example.dabutaizha.lines.bean.SentencesModel;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
+import com.example.dabutaizha.lines.bean.model.SentencesModel;
 import com.example.dabutaizha.lines.mvp.contract.AddSentenceContract;
 import com.example.dabutaizha.lines.mvp.presenter.AddSentencePresenter;
 import com.rengwuxian.materialedittext.MaterialEditText;
@@ -31,6 +32,8 @@ public class AddSentenceActivity extends BaseActivity implements AddSentenceCont
 
     @BindView(R.id.add_sentence_sliding_layout)
     public SlideDampingAnimationLayout mSlideDampingAnimationLayout;
+    @BindView(R.id.add_sentence_background_layout)
+    public RelativeLayout mBackgroundLayout;
     @BindView(R.id.toolbar)
     public android.support.v7.widget.Toolbar mToolbar;
     @BindView(R.id.add_sentence_top_image_bg)
@@ -99,6 +102,40 @@ public class AddSentenceActivity extends BaseActivity implements AddSentenceCont
     }
 
     @Override
+    protected void initTheme(int themeId) {
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mToolbar.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                mToolbar.setTitleTextColor(ResUtil.getColor(R.color.black));
+                mToolbar.setNavigationIcon(R.drawable.back);
+
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+
+                setEditTextColor(mEdtAuthor, R.color.black);
+                setEditTextColor(mEdtArticle, R.color.black);
+                setEditTextColor(mEdtContent, R.color.black);
+
+                mFloatingActionButton.setColorFilter(ResUtil.getColor(R.color.black));
+                break;
+            case Constant.NIGHT:
+                mToolbar.setBackgroundColor(ResUtil.getColor(R.color.status_bar_night));
+                mToolbar.setTitleTextColor(ResUtil.getColor(R.color.white));
+                mToolbar.setNavigationIcon(R.drawable.back_white);
+
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.background_night));
+
+                setEditTextColor(mEdtAuthor, R.color.white);
+                setEditTextColor(mEdtArticle, R.color.white);
+                setEditTextColor(mEdtContent, R.color.white);
+
+                mFloatingActionButton.setColorFilter(ResUtil.getColor(R.color.red_text_bg));
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
     protected void process() {
         mPresenter.process();
     }
@@ -125,5 +162,13 @@ public class AddSentenceActivity extends BaseActivity implements AddSentenceCont
     @Override
     public void showMessage(String msg) {
         ResUtil.showToast(this, msg);
+    }
+
+    private void setEditTextColor(MaterialEditText editText, int colorResId) {
+        editText.setUnderlineColor(ResUtil.getColor(colorResId));
+        editText.setBaseColor(ResUtil.getColor(colorResId));
+        editText.setPrimaryColor(ResUtil.getColor(colorResId));
+        editText.setTextColor(ResUtil.getColor(colorResId));
+
     }
 }

@@ -1,10 +1,8 @@
 package com.example.dabutaizha.lines.mvp.model;
 
-import android.util.Log;
-
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
-import com.example.dabutaizha.lines.bean.DialogueInfo;
+import com.example.dabutaizha.lines.bean.info.DialogueInfo;
 import com.example.dabutaizha.lines.mvp.contract.DialogueFragmentContract;
 import com.example.dabutaizha.lines.net.ApiServices;
 

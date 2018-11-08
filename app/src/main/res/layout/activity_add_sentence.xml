@@ -14,8 +14,9 @@
     app:allow_gesture="only_left">
 
     <RelativeLayout
+        android:id="@+id/add_sentence_background_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -48,7 +49,7 @@
             android:lineSpacingExtra="5dp"
             app:met_baseColor="@color/black_translate"
             app:met_primaryColor="@color/black"
-            app:met_floatingLabel="highlight"
+            app:met_floatingLabel="normal"
             android:hint="出自作品"
             app:met_floatingLabelText="出自作品"
             app:met_hideUnderline="true" />
@@ -65,7 +66,7 @@
             android:lineSpacingExtra="5dp"
             app:met_baseColor="@color/black_translate"
             app:met_primaryColor="@color/black"
-            app:met_floatingLabel="highlight"
+            app:met_floatingLabel="normal"
             android:hint="作者"
             app:met_floatingLabelText="作者"
             app:met_hideUnderline="true" />
@@ -82,7 +83,7 @@
             android:lineSpacingExtra="5dp"
             app:met_baseColor="@color/black_translate"
             app:met_primaryColor="@color/black"
-            app:met_floatingLabel="highlight"
+            app:met_floatingLabel="normal"
             android:hint="句子正文"
             app:met_floatingLabelText="句子正文"
             app:met_hideUnderline="true" />

@@ -8,7 +8,7 @@
     custom:bezier_curves_type="high_order_bezier_curves"
     custom:allow_gesture="only_left">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"

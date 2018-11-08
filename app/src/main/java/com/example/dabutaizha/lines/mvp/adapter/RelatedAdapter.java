@@ -1,12 +1,11 @@
 package com.example.dabutaizha.lines.mvp.adapter;
 
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.dabutaizha.lines.R;
-import com.example.dabutaizha.lines.bean.ArticleInfo;
+import com.example.dabutaizha.lines.bean.info.ArticleInfo;
 
 import java.util.List;
 

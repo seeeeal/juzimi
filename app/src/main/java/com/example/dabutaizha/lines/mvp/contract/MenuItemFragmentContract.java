@@ -2,8 +2,8 @@ package com.example.dabutaizha.lines.mvp.contract;
 
 import android.os.Bundle;
 
-import com.example.dabutaizha.lines.bean.BlockInfo;
-import com.example.dabutaizha.lines.bean.BlockInfoItem;
+import com.example.dabutaizha.lines.bean.info.BlockInfo;
+import com.example.dabutaizha.lines.bean.info.BlockInfoItem;
 
 import java.util.List;
 
@@ -67,6 +67,8 @@ public interface MenuItemFragmentContract {
         void fail(String msg);
 
         void requestError();
+
+        void notifyDataThemeChanged(List<BlockInfoItem> data, int themeId);
     }
 
     interface Model {

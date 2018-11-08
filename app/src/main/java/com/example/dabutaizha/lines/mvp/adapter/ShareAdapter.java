@@ -9,7 +9,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.dabutaizha.lines.ImageUtil.ImageLoader;
 import com.example.dabutaizha.lines.R;
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 import com.example.dabutaizha.lines.database.SentencesObjectBox;
 import com.example.dabutaizha.lines.SentenceItemRegexUtil;
 

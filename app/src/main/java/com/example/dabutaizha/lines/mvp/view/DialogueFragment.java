@@ -7,12 +7,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.ImageUtil.ImageLoader;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
-import com.example.dabutaizha.lines.bean.DialogueInfo;
+import com.example.dabutaizha.lines.bean.info.DialogueInfo;
 import com.example.dabutaizha.lines.mvp.adapter.DialogueAdapter;
 import com.example.dabutaizha.lines.mvp.contract.DialogueFragmentContract;
 import com.example.dabutaizha.lines.mvp.presenter.DialoguePresenter;
@@ -36,6 +35,8 @@ public class DialogueFragment extends BaseFragment implements DialogueFragmentCo
     public RecyclerView mDialogueRcy;
     @BindView(R.id.fg_dialogue_error)
     public RelativeLayout mErrorLayout;
+    @BindView(R.id.fg_dialogue_background_layout)
+    public RelativeLayout mBackgroundLayout;
 
     private DialogueFragmentContract.Presenter mPresenter;
     private DialogueAdapter mDialogueAdapter;
@@ -111,6 +112,20 @@ public class DialogueFragment extends BaseFragment implements DialogueFragmentCo
             bundle.putString(ExplorePhotoActivity.EXPLORE_PHOTO_KEY, photoUrl);
             ExplorePhotoActivity.startActivity(getContext(), bundle);
         });
+    }
+
+    @Override
+    protected void initTheme(int themeId) {
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                break;
+            case Constant.NIGHT:
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.hotpage_content_bg));
+                break;
+            default:
+                break;
+        }
     }
 
     @Override

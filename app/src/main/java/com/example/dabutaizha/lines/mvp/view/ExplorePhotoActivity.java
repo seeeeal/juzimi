@@ -80,6 +80,11 @@ public class ExplorePhotoActivity extends BaseActivity implements ExplorePhotoAc
     }
 
     @Override
+    protected void initTheme(int themeId) {
+
+    }
+
+    @Override
     protected void process() {
         ImageLoader.loadImageByUrl(this, mPhotoView, mPhotoUrl);
     }

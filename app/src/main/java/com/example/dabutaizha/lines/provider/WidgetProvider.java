@@ -7,16 +7,12 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.RemoteViews;
-import android.widget.Toast;
 
 import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.SentenceItemRegexUtil;
-import com.example.dabutaizha.lines.bean.SearchInfo;
-import com.example.dabutaizha.lines.mvp.view.CollectionActivity;
-import com.example.dabutaizha.lines.mvp.view.MainActivity;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 
 import static com.example.dabutaizha.lines.provider.WidgetModel.getWidgetTheme;
 

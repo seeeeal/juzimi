@@ -3,10 +3,11 @@ package com.example.dabutaizha.lines.mvp.presenter;
 import android.os.Bundle;
 
 import com.example.dabutaizha.lines.Constant;
-import com.example.dabutaizha.lines.bean.BlockInfo;
-import com.example.dabutaizha.lines.bean.BlockInfoItem;
+import com.example.dabutaizha.lines.bean.info.BlockInfo;
+import com.example.dabutaizha.lines.bean.info.BlockInfoItem;
 import com.example.dabutaizha.lines.mvp.contract.MenuItemFragmentContract;
 import com.example.dabutaizha.lines.mvp.model.MenuItemModel;
+import com.example.dabutaizha.lines.wxapi.AppThemeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,8 +56,11 @@ public class MenuItemPresenter implements MenuItemFragmentContract.Presenter {
         }
 
         List<BlockInfoItem> blockInfoItemList = new ArrayList<>();
+
         for (int i = 0; i < pagesSize; i ++) {
-            blockInfoItemList.add(new BlockInfoItem(pages.get(i), contents.get(i)));
+            BlockInfoItem infoItem = new BlockInfoItem(pages.get(i), contents.get(i));
+            infoItem.setmItemUIType(AppThemeUtils.getCurrentAppTheme());
+            blockInfoItemList.add(infoItem);
         }
 
         mView.updateList(blockInfoItemList);
@@ -82,6 +86,15 @@ public class MenuItemPresenter implements MenuItemFragmentContract.Presenter {
             List<BlockInfoItem> blockInfoItemList = new ArrayList<>();
             mView.updateList(blockInfoItemList);
             mView.showRequestError();
+        }
+    }
+
+    @Override
+    public void notifyDataThemeChanged(List<BlockInfoItem> data, int themeId) {
+        for (BlockInfoItem infoItem : data) {
+            if (infoItem.getItemType() != themeId) {
+                infoItem.setmItemUIType(themeId);
+            }
         }
     }
 

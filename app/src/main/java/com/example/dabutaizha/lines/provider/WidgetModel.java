@@ -5,8 +5,8 @@ import android.content.SharedPreferences;
 
 import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.SentenceUtil;
-import com.example.dabutaizha.lines.bean.SearchInfo;
-import com.example.dabutaizha.lines.bean.SentencesModel;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
+import com.example.dabutaizha.lines.bean.model.SentencesModel;
 import com.example.dabutaizha.lines.database.SentencesObjectBox;
 import com.example.dabutaizha.lines.mvp.view.BaseApplication;
 
@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import io.objectbox.query.Query;
 import io.reactivex.functions.Consumer;
 
 /**

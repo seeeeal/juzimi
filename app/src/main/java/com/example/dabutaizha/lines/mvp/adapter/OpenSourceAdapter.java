@@ -2,10 +2,12 @@ package com.example.dabutaizha.lines.mvp.adapter;
 
 import android.support.annotation.Nullable;
 
+import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
-import com.example.dabutaizha.lines.bean.OpenSourceInfo;
+import com.example.dabutaizha.lines.bean.info.OpenSourceInfo;
 
 import java.util.List;
 
@@ -15,10 +17,12 @@ import java.util.List;
  * Created by dabutaizha on 2018/2/5 下午4:11.
  */
 
-public class OpenSourceAdapter extends BaseQuickAdapter<OpenSourceInfo, BaseViewHolder> {
+public class OpenSourceAdapter extends BaseMultiItemQuickAdapter<OpenSourceInfo, BaseViewHolder> {
 
     public OpenSourceAdapter(@Nullable List<OpenSourceInfo> data) {
-        super(R.layout.open_source_item, data);
+        super(data);
+        addItemType(Constant.DAY_TIME, R.layout.open_source_item);
+        addItemType(Constant.NIGHT, R.layout.open_source_item_night);
     }
 
     @Override

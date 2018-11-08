@@ -48,6 +48,11 @@ public class SplashActivity extends BaseActivity implements SplashActivityContra
     }
 
     @Override
+    protected void initTheme(int themeId) {
+
+    }
+
+    @Override
     protected void process() {
         mPresenter.process();
     }

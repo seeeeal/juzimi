@@ -1,7 +1,7 @@
 package com.example.dabutaizha.lines.database;
 
-import com.example.dabutaizha.lines.bean.PremissionModel;
-import com.example.dabutaizha.lines.bean.PremissionModel_;
+import com.example.dabutaizha.lines.bean.model.PremissionModel;
+import com.example.dabutaizha.lines.bean.model.PremissionModel_;
 import com.example.dabutaizha.lines.mvp.view.BaseApplication;
 
 import java.util.List;

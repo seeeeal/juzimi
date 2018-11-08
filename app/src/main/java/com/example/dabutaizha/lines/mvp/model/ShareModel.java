@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import com.example.dabutaizha.lines.ImageUtil.ImageLoader;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
-import com.example.dabutaizha.lines.bean.SentencesModel;
+import com.example.dabutaizha.lines.bean.model.SentencesModel;
 import com.example.dabutaizha.lines.database.SentencesObjectBox;
 import com.example.dabutaizha.lines.mvp.view.BaseApplication;
 import com.example.dabutaizha.lines.mvp.contract.ShareContract;

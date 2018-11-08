@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.ContentLoadingProgressBar;
@@ -20,12 +19,10 @@ import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
 import com.example.dabutaizha.lines.SentenceUtil;
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 import com.example.dabutaizha.lines.mvp.adapter.SentencesAdapter;
 import com.example.dabutaizha.lines.mvp.contract.SearchResultActivityContract;
 import com.example.dabutaizha.lines.mvp.presenter.SearchResultPresenter;
-import com.gyf.barlibrary.BarHide;
-import com.gyf.barlibrary.ImmersionBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +41,8 @@ public class SearchResultActivity extends BaseActivity implements SearchResultAc
 
     @BindView(R.id.search_result_slide_layout)
     public SlideDampingAnimationLayout mSlideAnimationLayout;
+    @BindView(R.id.search_result_background_layout)
+    public RelativeLayout mBackgroundLayout;
     @BindView(R.id.search_result_rcy)
     public RecyclerView mSearchResultRcy;
     @BindView(R.id.search_result_coord)
@@ -130,6 +129,22 @@ public class SearchResultActivity extends BaseActivity implements SearchResultAc
             mPresenter.process(mSearchTag);
             mSearchErrorLayout.setVisibility(View.GONE);
         });
+    }
+
+    @Override
+    protected void initTheme(int themeId) {
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mCollLayout.setBackgroundColor(ResUtil.getColor(R.color.red_bg));
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                break;
+            case Constant.NIGHT:
+                mCollLayout.setBackgroundColor(ResUtil.getColor(R.color.red_text_bg));
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.background_night));
+                break;
+            default:
+                break;
+        }
     }
 
     @Override

@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.dabutaizha.lines.wxapi.AppThemeUtils;
+
 import butterknife.ButterKnife;
 
 /**
@@ -29,6 +31,8 @@ public abstract class BaseFragment extends Fragment {
 
     protected void initViewListener() {}
 
+    protected abstract void initTheme(int themeId);
+
     protected abstract void process(Bundle savedInstanceState);
 
     @Override
@@ -39,7 +43,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate");
         initData(savedInstanceState);
     }
 
@@ -52,7 +55,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Log.d(TAG, "onViewCreated");
         ButterKnife.bind(this, view);
         initView(view, savedInstanceState);
     }
@@ -74,12 +76,13 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        Log.d(TAG, "onStart");
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        //初始化Fragment主题
+        initTheme(AppThemeUtils.getCurrentAppTheme());
     }
 
     @Override
@@ -90,7 +93,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
-        Log.d(TAG, "onStop");
     }
 
     @Override

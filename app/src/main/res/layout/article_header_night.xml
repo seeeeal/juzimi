@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_10"
+    android:layout_marginBottom="@dimen/dp_10">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_night">
+
+        <TextView
+            android:id="@+id/article_intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_40"
+            android:paddingLeft="@dimen/dp_40"
+            android:paddingRight="@dimen/dp_40"
+            android:text="@string/article_intro"
+            android:textColor="@color/red_text_bg"/>
+
+        <TextView
+            android:id="@+id/article_intro_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:paddingLeft="@dimen/dp_40"
+            android:paddingRight="@dimen/dp_40"
+            android:layout_below="@id/article_intro"
+            android:textSize="@dimen/sp_12"
+            android:lineSpacingExtra="5dp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/article_related"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_40"
+            android:paddingLeft="@dimen/dp_40"
+            android:paddingRight="@dimen/dp_40"
+            android:layout_below="@id/article_intro_content"
+            android:text="@string/article_related"
+            android:textColor="@color/red_text_bg"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/article_related_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_below="@id/article_related">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/article_related_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_40"
+            android:layout_marginBottom="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_below="@id/article_related"
+            android:textSize="18sp"
+            android:textColor="@color/orange_light"
+            android:text="@string/article_related_empty"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

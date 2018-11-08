@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.dabutaizha.lines.mvp.view.MainActivity"
@@ -18,13 +18,12 @@
         android:id="@+id/main_tab"
         android:layout_width="match_parent"
         android:layout_height="@dimen/default_height"
-        android:elevation="@dimen/elevation"
         android:background="@color/colorPrimary"
-        app:tabBackground="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:elevation="5dp"
         app:tabSelectedTextColor="@color/colorAccent"
         app:tabTextColor="@color/colorAccentDark"
         app:tabIndicatorColor="@color/yellow_dark"
-        app:tabMode="fixed"
-        android:layout_alignParentBottom="true"/>
+        app:tabMode="fixed" />
 
 </RelativeLayout>

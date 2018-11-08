@@ -70,6 +70,30 @@ public class HotPageFragment extends BaseFragment implements HotPageFragmentCont
     }
 
     @Override
+    protected void initTheme(int themeId) {
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mTabLayout.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                mTabLayout.setTabTextColors(
+                        ResUtil.getColor(R.color.colorAccentDark),
+                        ResUtil.getColor(R.color.colorAccent)
+                );
+                mTabLayout.setSelectedTabIndicatorColor(ResUtil.getColor(R.color.yellow_dark));
+                break;
+            case Constant.NIGHT:
+                mTabLayout.setBackgroundColor(ResUtil.getColor(R.color.status_bar_night));
+                mTabLayout.setTabTextColors(
+                        ResUtil.getColor(R.color.gray),
+                        ResUtil.getColor(R.color.white_light)
+                );
+                mTabLayout.setSelectedTabIndicatorColor(ResUtil.getColor(R.color.red_bg));
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
     protected void process(Bundle savedInstanceState) {
         mPresenter.process();
     }

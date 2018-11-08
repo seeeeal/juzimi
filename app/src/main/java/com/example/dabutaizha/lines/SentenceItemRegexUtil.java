@@ -1,6 +1,6 @@
 package com.example.dabutaizha.lines;
 
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 
 /**
  * Copyright (C) 2018 Unicorn, Inc.

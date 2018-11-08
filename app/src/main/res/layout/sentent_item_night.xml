@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="@dimen/sp_16"
+    android:layout_marginLeft="@dimen/sp_16"
+    android:layout_marginBottom="8dp"
+    android:paddingTop="@dimen/dp_40"
+    android:paddingBottom="@dimen/dp_40"
+    android:paddingLeft="@dimen/fab_margin"
+    android:paddingRight="@dimen/fab_margin"
+    android:background="@drawable/hotpage_sentences_night_bg"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/item_article"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="@color/red_text_bg"
+        android:gravity="start"
+        android:fontFamily="@font/font_family"
+        android:textSize="24sp"
+        android:lineSpacingExtra="5dp"/>
+
+    <TextView
+        android:id="@+id/item_writer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="@dimen/dp_10"
+        android:gravity="start"
+        android:textColor="@color/red_text_bg"
+        android:fontFamily="@font/font_family"
+        android:layout_below="@id/item_article"
+        android:lineSpacingExtra="5dp"/>
+
+    <TextView
+        android:id="@+id/item_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/white"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="@dimen/dp_10"
+        android:layout_below="@id/item_writer"
+        android:lineSpacingExtra="5dp"
+        android:gravity="start" />
+
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:background="@drawable/background_theme_card"
+    android:elevation="10dp">
+
+    <ImageView
+        android:id="@+id/app_theme_card_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/app_theme_card_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/app_name"
+        android:background="@drawable/ripple_theme_card"
+        android:paddingTop="@dimen/dp_40"
+        android:paddingLeft="@dimen/dp_40"
+        android:textSize="26sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/font_family_second"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/app_theme_card_used"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/theme_used"
+        android:paddingBottom="@dimen/dp_40"
+        android:paddingRight="@dimen/dp_40"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:fontFamily="@font/font_family_second"
+        android:textSize="@dimen/sp_16"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -3,6 +3,7 @@ package com.example.dabutaizha.lines.mvp.view;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.dabutaizha.lines.Constant;
@@ -23,6 +24,10 @@ import me.gujun.android.taggroup.TagGroup;
 
 public class SearchFragment extends BaseFragment implements SearchFragmentContract.View {
 
+    @BindView(R.id.fg_search_edt_bg)
+    public RelativeLayout mSearchEdtBackgrount;
+    @BindView(R.id.fg_search_background_layout)
+    public RelativeLayout mBackgroundLayout;
     @BindView(R.id.fg_search_edt)
     public MaterialEditText mEditText;
     @BindView(R.id.search_his_tags)
@@ -31,6 +36,10 @@ public class SearchFragment extends BaseFragment implements SearchFragmentContra
     public TextView mTextViewClean;
     @BindView(R.id.search_recommend_tags)
     public TagGroup mRecommendTagGroup;
+    @BindView(R.id.search_recommend_title)
+    public TextView mRecommendTitle;
+    @BindView(R.id.search_history_title)
+    public TextView mHistoryTitle;
 
     private SearchFragmentContract.Presenter mPresenter;
 
@@ -97,6 +106,31 @@ public class SearchFragment extends BaseFragment implements SearchFragmentContra
         });
 
         mTextViewClean.setOnClickListener(view -> mPresenter.clearSearchTags());
+    }
+
+    @Override
+    protected void initTheme(int themeId) {
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                mHistoryTitle.setTextColor(ResUtil.getColor(R.color.black));
+                mRecommendTitle.setTextColor(ResUtil.getColor(R.color.black));
+                mTextViewClean.setTextColor(ResUtil.getColor(R.color.black));
+
+                mSearchEdtBackgrount.setBackground(ResUtil.getDrawable(R.drawable.background_edt));
+                break;
+            case Constant.NIGHT:
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.hotpage_content_bg));
+                mHistoryTitle.setTextColor(ResUtil.getColor(R.color.colorPrimary));
+                mRecommendTitle.setTextColor(ResUtil.getColor(R.color.colorPrimary));
+                mTextViewClean.setTextColor(ResUtil.getColor(R.color.colorPrimary));
+
+                mSearchEdtBackgrount.setBackground(ResUtil.getDrawable(R.drawable.background_edt_night));
+
+                break;
+            default:
+                break;
+        }
     }
 
     @Override

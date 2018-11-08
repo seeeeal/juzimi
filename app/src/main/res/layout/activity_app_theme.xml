@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<slideDampongAnimationLayout.SlideDampingAnimationLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_theme_sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:bezier_curves_color="@color/black"
+    app:bezier_curves_type="high_order_bezier_curves"
+    app:allow_gesture="only_left">
+
+    <RelativeLayout
+        android:id="@+id/app_theme_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/app_theme_rcy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</slideDampongAnimationLayout.SlideDampingAnimationLayout>

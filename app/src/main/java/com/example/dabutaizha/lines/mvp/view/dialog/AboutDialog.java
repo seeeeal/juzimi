@@ -6,15 +6,15 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.view.View;
 import android.widget.TextView;
 
 import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
-import com.example.dabutaizha.lines.bean.PremissionModel;
+import com.example.dabutaizha.lines.bean.model.PremissionModel;
 import com.example.dabutaizha.lines.database.PremissionObjectBox;
 import com.example.dabutaizha.lines.mvp.view.WebViewActivity;
+import com.example.dabutaizha.lines.wxapi.AppThemeUtils;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
@@ -47,7 +47,7 @@ public class AboutDialog extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dialog_about);
+        setContentView(getCurrentThemeLayout());
         ButterKnife.bind(this);
 
         initView();
@@ -90,5 +90,10 @@ public class AboutDialog extends Dialog {
             }
             return true;
         });
+    }
+
+    private int getCurrentThemeLayout() {
+        return (AppThemeUtils.getCurrentAppTheme() == Constant.DAY_TIME ?
+                R.layout.dialog_about : R.layout.dialog_about_night);
     }
 }

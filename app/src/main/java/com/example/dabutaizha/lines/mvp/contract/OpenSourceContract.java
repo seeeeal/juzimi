@@ -1,6 +1,6 @@
 package com.example.dabutaizha.lines.mvp.contract;
 
-import com.example.dabutaizha.lines.bean.OpenSourceInfo;
+import com.example.dabutaizha.lines.bean.info.OpenSourceInfo;
 
 import java.util.List;
 

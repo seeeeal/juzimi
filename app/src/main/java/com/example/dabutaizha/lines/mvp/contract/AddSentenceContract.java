@@ -1,6 +1,6 @@
 package com.example.dabutaizha.lines.mvp.contract;
 
-import com.example.dabutaizha.lines.bean.SentencesModel;
+import com.example.dabutaizha.lines.bean.model.SentencesModel;
 
 /**
  * Copyright (C) 2018 Unicorn, Inc.

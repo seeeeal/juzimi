@@ -2,8 +2,8 @@ package com.example.dabutaizha.lines;
 
 import android.util.Log;
 
-import com.example.dabutaizha.lines.bean.SearchInfo;
-import com.example.dabutaizha.lines.bean.SentencesModel;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
+import com.example.dabutaizha.lines.bean.model.SentencesModel;
 
 
 /**

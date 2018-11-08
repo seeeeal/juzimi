@@ -20,7 +20,6 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bilibili.socialize.share.core.SocializeMedia;
 import com.bilibili.socialize.share.core.error.BiliShareStatusCode;
@@ -33,8 +32,8 @@ import com.example.dabutaizha.lines.ImageUtil.ImageLoader;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
 import com.example.dabutaizha.lines.SentenceUtil;
-import com.example.dabutaizha.lines.bean.SearchInfo;
-import com.example.dabutaizha.lines.bean.SentencesModel;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
+import com.example.dabutaizha.lines.bean.model.SentencesModel;
 import com.example.dabutaizha.lines.share.ShareHelper;
 import com.example.dabutaizha.lines.mvp.adapter.ShareAdapter;
 import com.example.dabutaizha.lines.mvp.contract.ShareContract;
@@ -265,6 +264,24 @@ public class ShareActivity extends BaseActivity implements ShareContract.View, E
                 authorTv.setTextColor(resources.getColor(R.color.white));
             }
         });
+    }
+
+    @Override
+    protected void initTheme(int themeId) {
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mToolbar.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                mToolbar.setTitleTextColor(ResUtil.getColor(R.color.black));
+                mToolbar.setNavigationIcon(R.drawable.back);
+                break;
+            case Constant.NIGHT:
+                mToolbar.setBackgroundColor(ResUtil.getColor(R.color.status_bar_night));
+                mToolbar.setTitleTextColor(ResUtil.getColor(R.color.white));
+                mToolbar.setNavigationIcon(R.drawable.back_white);
+                break;
+            default:
+                break;
+        }
     }
 
     @Override

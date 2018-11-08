@@ -2,7 +2,7 @@ package com.example.dabutaizha.lines.mvp.contract;
 
 import android.os.Bundle;
 
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 
 import java.util.List;
 
@@ -75,6 +75,8 @@ public interface HotPageItemFragmentContract {
         void fail(String msg);
 
         void requestError();
+
+        void notifyDataThemeChanged(List<SearchInfo.SentencesItem> itemList, int themeId);
     }
 
     interface Model {

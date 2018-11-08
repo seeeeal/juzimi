@@ -11,15 +11,20 @@ import android.widget.RelativeLayout;
 import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
-import com.example.dabutaizha.lines.bean.GroupSentencesInfo;
+import com.example.dabutaizha.lines.bean.info.GroupSentencesInfo;
+import com.example.dabutaizha.lines.mvp.adapter.CollectionGroupBaseAdapter;
 import com.example.dabutaizha.lines.mvp.adapter.CollectionGroupAdapter;
+import com.example.dabutaizha.lines.mvp.adapter.CollectionGroupNightAdapter;
 import com.example.dabutaizha.lines.mvp.contract.CollectionActivityContract;
 import com.example.dabutaizha.lines.mvp.presenter.CollectionPresenter;
+import com.example.dabutaizha.lines.wxapi.AppThemeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import slideDampongAnimationLayout.SlideDampingAnimationLayout;
+import slideDampongAnimationLayout.SlideEventListener;
 
 /**
  * Copyright (C) 2018 Unicorn, Inc.
@@ -29,6 +34,10 @@ import butterknife.BindView;
 
 public class CollectionActivity extends BaseActivity implements CollectionActivityContract.View {
 
+    @BindView(R.id.collection_sliding_layout)
+    public SlideDampingAnimationLayout mSlideAnimationLayout;
+    @BindView(R.id.collection_background_layout)
+    public RelativeLayout mBackgroundLayout;
     @BindView(R.id.toolbar)
     public Toolbar mToolbar;
     @BindView(R.id.collection_rcy)
@@ -38,7 +47,7 @@ public class CollectionActivity extends BaseActivity implements CollectionActivi
 
     private CollectionActivityContract.Presenter mPresenter;
 
-    private CollectionGroupAdapter mGroupAdapter;
+    private CollectionGroupBaseAdapter mGroupAdapter;
     private List<GroupSentencesInfo> mGroupSentencesList;
 
     @Override
@@ -65,13 +74,31 @@ public class CollectionActivity extends BaseActivity implements CollectionActivi
         mToolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.colorAccent));
         mToolbar.setNavigationIcon(R.drawable.back);
 
-        mGroupAdapter = new CollectionGroupAdapter(this, mGroupSentencesList);
+
+        if (AppThemeUtils.getCurrentAppTheme() == Constant.DAY_TIME) {
+            mGroupAdapter = new CollectionGroupAdapter(mGroupSentencesList);
+        } else {
+            mGroupAdapter = new CollectionGroupNightAdapter(mGroupSentencesList);
+        }
+
         mRecyclerView.setAdapter(mGroupAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     @Override
     protected void initViewListener() {
+        mSlideAnimationLayout.setSlideListener(new SlideEventListener() {
+            @Override
+            public void leftEvent() {
+                CollectionActivity.this.finish();
+            }
+
+            @Override
+            public void rightEvent() {
+
+            }
+        });
+
         mToolbar.setNavigationOnClickListener(view -> finish());
 
         mGroupAdapter.setOnItemChildClickListener((adapter, view, position) -> {
@@ -81,6 +108,26 @@ public class CollectionActivity extends BaseActivity implements CollectionActivi
 
             ShareActivity.startActivity(this, bundle);
         });
+    }
+
+    @Override
+    protected void initTheme(int themeId) {
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mToolbar.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                mToolbar.setTitleTextColor(ResUtil.getColor(R.color.black));
+                mToolbar.setNavigationIcon(R.drawable.back);
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                break;
+            case Constant.NIGHT:
+                mToolbar.setBackgroundColor(ResUtil.getColor(R.color.status_bar_night));
+                mToolbar.setTitleTextColor(ResUtil.getColor(R.color.white));
+                mToolbar.setNavigationIcon(R.drawable.back_white);
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.background_night));
+                break;
+            default:
+                break;
+        }
     }
 
     @Override

@@ -3,7 +3,7 @@ package com.example.dabutaizha.lines.mvp.contract;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.dabutaizha.lines.bean.SentencesModel;
+import com.example.dabutaizha.lines.bean.model.SentencesModel;
 import com.example.dabutaizha.lines.mvp.adapter.ShareAdapter;
 import com.example.dabutaizha.lines.mvp.presenter.SharePresenter;
 

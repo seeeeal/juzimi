@@ -11,7 +11,7 @@ import android.util.Log;
 import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
-import com.example.dabutaizha.lines.bean.VersionInfo;
+import com.example.dabutaizha.lines.bean.info.VersionInfo;
 import com.example.dabutaizha.lines.database.PremissionObjectBox;
 import com.example.dabutaizha.lines.mvp.view.BaseApplication;
 import com.example.dabutaizha.lines.mvp.view.DialogueFragment;

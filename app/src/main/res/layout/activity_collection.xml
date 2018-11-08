@@ -1,51 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<slideDampongAnimationLayout.SlideDampingAnimationLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/collection_sliding_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:fitsSystemWindows="true">
-
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/collection_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/collection_rcy"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/collection_toolbar"/>
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    app:bezier_curves_color="@color/black"
+    app:bezier_curves_type="high_order_bezier_curves"
+    app:allow_gesture="only_left">
 
     <RelativeLayout
-        android:id="@+id/collection_empty_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone">
+        android:id="@+id/collection_background_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true">
 
-        <ImageView
-            android:layout_width="@dimen/dp_40"
-            android:layout_height="@dimen/dp_40"
-            android:src="@drawable/refresh"
-            android:layout_centerInParent="true" />
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/collection_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-        <TextView
-            android:id="@+id/fg_menu_error_tv"
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/collection_rcy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/collection_toolbar"/>
+
+        <RelativeLayout
+            android:id="@+id/collection_empty_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/collection_empty"
-            android:layout_below="@id/fg_menu_error_img"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"/>
+            android:layout_centerInParent="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:src="@drawable/refresh"
+                android:layout_centerInParent="true" />
+
+            <TextView
+                android:id="@+id/fg_menu_error_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/collection_empty"
+                android:layout_below="@id/fg_menu_error_img"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="80dp"/>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
-</RelativeLayout>
+</slideDampongAnimationLayout.SlideDampingAnimationLayout>

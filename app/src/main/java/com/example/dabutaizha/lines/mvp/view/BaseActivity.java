@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import com.example.dabutaizha.lines.ActivityManager;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
+import com.example.dabutaizha.lines.wxapi.AppThemeUtils;
 import com.gyf.barlibrary.ImmersionBar;
 
 import butterknife.ButterKnife;
@@ -58,11 +59,19 @@ public abstract class BaseActivity extends AppCompatActivity {
         process();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initTheme(AppThemeUtils.getCurrentAppTheme());
+    }
+
     protected abstract void initData();
 
     protected abstract void initView();
 
     protected abstract void initViewListener();
+
+    protected abstract void initTheme(int themeId);
 
     protected abstract void process();
 

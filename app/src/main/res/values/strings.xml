@@ -21,6 +21,7 @@
     <string name="menu_feedback">○\t\t\t\t\t\t意见反馈</string>
     <string name="menu_collection">○\t\t\t\t\t\t本地收藏</string>
     <string name="menu_widget_theme">○\t\t\t\t\t\t插件主题</string>
+    <string name="menu_app_theme">○\t\t\t\t\t\t应用主题</string>
     <string name="clearCache">清理缓存成功</string>
     <string name="open_source_title">开源相关</string>
     <string name="feedback_error">您的设备尚未安装邮件软件</string>
@@ -83,6 +84,13 @@
     <string name="widget_theme_translate">纯透明</string>
     <string name="theme_default_tip">皓月灰-已选择</string>
     <string name="theme_translate_tip">纯透明-已选择</string>
+    <string name="app_theme_title">主题切换</string>
+    <string name="theme_used">使用中</string>
+
+    <string-array name="app_theme_item">
+        <item>○ 白昼</item>
+        <item>○ 黑夜</item>
+    </string-array>
 
     <string-array name="tab_item">
         <item>广场</item>

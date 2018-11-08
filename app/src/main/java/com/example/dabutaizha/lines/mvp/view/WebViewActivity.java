@@ -89,6 +89,11 @@ public class WebViewActivity extends BaseActivity {
     }
 
     @Override
+    protected void initTheme(int themeId) {
+
+    }
+
+    @Override
     protected void process() {
         mWebView.loadUrl(mUrl);
     }

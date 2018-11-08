@@ -3,10 +3,10 @@ package com.example.dabutaizha.lines.mvp.presenter;
 import android.os.Bundle;
 
 import com.example.dabutaizha.lines.Constant;
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 import com.example.dabutaizha.lines.mvp.contract.HotPageItemFragmentContract;
 import com.example.dabutaizha.lines.mvp.model.HotpageItemModel;
-import com.example.dabutaizha.lines.mvp.model.MenuItemModel;
+import com.example.dabutaizha.lines.wxapi.AppThemeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +51,11 @@ public class HotpageItemPresenter implements HotPageItemFragmentContract.Present
      */
     @Override
     public void loadData(SearchInfo searchInfo) {
-        mView.updateData(searchInfo.getSentencesItems());
+        List<SearchInfo.SentencesItem> sentencesItemList = searchInfo.getSentencesItems();
+        for (SearchInfo.SentencesItem item : sentencesItemList) {
+            item.setItemUIType(AppThemeUtils.getCurrentAppTheme());
+        }
+        mView.updateData(sentencesItemList);
     }
 
     /**
@@ -94,4 +98,14 @@ public class HotpageItemPresenter implements HotPageItemFragmentContract.Present
             mView.showRequestError();
         }
     }
+
+    @Override
+    public void notifyDataThemeChanged(List<SearchInfo.SentencesItem> itemList, int themeId) {
+        for (SearchInfo.SentencesItem item : itemList) {
+            if (item.getItemUIType() != themeId) {
+                item.setItemUIType(themeId);
+            }
+        }
+    }
+
 }

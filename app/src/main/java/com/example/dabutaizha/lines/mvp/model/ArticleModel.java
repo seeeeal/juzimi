@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
-import com.example.dabutaizha.lines.bean.ArticleInfo;
+import com.example.dabutaizha.lines.bean.info.ArticleInfo;
 import com.example.dabutaizha.lines.net.ApiServices;
 import com.example.dabutaizha.lines.mvp.contract.ArticleActivityContract;
 

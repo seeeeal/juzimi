@@ -1,8 +1,8 @@
 package com.example.dabutaizha.lines.database;
 
 
-import com.example.dabutaizha.lines.bean.SentencesModel;
-import com.example.dabutaizha.lines.bean.SentencesModel_;
+import com.example.dabutaizha.lines.bean.model.SentencesModel;
+import com.example.dabutaizha.lines.bean.model.SentencesModel_;
 import com.example.dabutaizha.lines.mvp.view.BaseApplication;
 
 import java.text.Collator;

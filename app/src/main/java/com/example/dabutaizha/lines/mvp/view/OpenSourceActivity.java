@@ -9,7 +9,7 @@ import android.support.v7.widget.Toolbar;
 import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
-import com.example.dabutaizha.lines.bean.OpenSourceInfo;
+import com.example.dabutaizha.lines.bean.info.OpenSourceInfo;
 import com.example.dabutaizha.lines.mvp.adapter.OpenSourceAdapter;
 import com.example.dabutaizha.lines.mvp.contract.OpenSourceContract;
 import com.example.dabutaizha.lines.mvp.presenter.OpenSourcePresenter;
@@ -65,6 +65,24 @@ public class OpenSourceActivity extends BaseActivity implements OpenSourceContra
             bundle.putString(Constant.WEBVIEW_URL, info.getOpenSourceLink());
             WebViewActivity.startActivity(OpenSourceActivity.this, bundle);
         });
+    }
+
+    @Override
+    protected void initTheme(int themeId) {
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mToolbar.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                mToolbar.setTitleTextColor(ResUtil.getColor(R.color.black));
+                mToolbar.setNavigationIcon(R.drawable.back);
+                break;
+            case Constant.NIGHT:
+                mToolbar.setBackgroundColor(ResUtil.getColor(R.color.status_bar_night));
+                mToolbar.setTitleTextColor(ResUtil.getColor(R.color.white));
+                mToolbar.setNavigationIcon(R.drawable.back_white);
+                break;
+            default:
+                break;
+        }
     }
 
     @Override

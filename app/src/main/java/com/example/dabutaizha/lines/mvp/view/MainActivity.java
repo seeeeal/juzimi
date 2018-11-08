@@ -3,6 +3,8 @@ package com.example.dabutaizha.lines.mvp.view;
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -12,9 +14,12 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.dabutaizha.lines.ActivityManager;
@@ -22,6 +27,7 @@ import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
 import com.example.dabutaizha.lines.TimeUtil;
+import com.example.dabutaizha.lines.mvp.adapter.AppThemeCardAdapter;
 import com.example.dabutaizha.lines.mvp.contract.MainActivityContract;
 import com.example.dabutaizha.lines.mvp.adapter.TabAdapter;
 import com.example.dabutaizha.lines.mvp.presenter.MainPresenter;
@@ -32,6 +38,7 @@ import com.example.dabutaizha.lines.mvp.view.dialog.RewardDialog;
 import com.example.dabutaizha.lines.mvp.view.dialog.UpdateDialog;
 import com.example.dabutaizha.lines.mvp.view.dialog.WidgetThemeDialog;
 import com.example.dabutaizha.lines.provider.WidgetModel;
+import com.flyco.tablayout.SlidingTabLayout;
 
 import java.util.List;
 import java.util.concurrent.CyclicBarrier;
@@ -55,6 +62,7 @@ public class MainActivity extends BaseActivity implements MainActivityContract.V
     private TextView mAddSentences;
     private TextView mAccountInfo;
     private TabAdapter mTabAdapter;
+    private ImageView mNavHeaderBackground;
 
     private MainActivityContract.Presenter mPresenter;
 
@@ -94,6 +102,7 @@ public class MainActivity extends BaseActivity implements MainActivityContract.V
         View navHeaderView = mNavigationView.inflateHeaderView(R.layout.nav_header_main);
         mAccountInfo = navHeaderView.findViewById(R.id.app_collect_info);
         mAddSentences = navHeaderView.findViewById(R.id.app_add_personal_sentences);
+        mNavHeaderBackground = navHeaderView.findViewById(R.id.app_nav_header_bg);
 
         mAddSentences.post(() -> {
             if (Constant.INPUT_SENTENCE_PREMISSION) {
@@ -115,6 +124,46 @@ public class MainActivity extends BaseActivity implements MainActivityContract.V
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void initTheme(int themeId) {
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mToolbar.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                mToolbar.setTitleTextColor(ResUtil.getColor(R.color.black));
+                mToolbar.setNavigationIcon(R.drawable.nav_icon);
+                mTabLayout.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                mTabLayout.setTabTextColors(
+                        ResUtil.getColor(R.color.colorAccentDark),
+                        ResUtil.getColor(R.color.colorAccent)
+                );
+                mTabLayout.setSelectedTabIndicatorColor(ResUtil.getColor(R.color.yellow_dark));
+
+                mNavigationView.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                mNavigationView.setItemTextColor(ResUtil.getColorStateList(R.color.nav_item_text_color_list));
+
+                mNavHeaderBackground.setImageDrawable(ResUtil.getDrawable(R.drawable.share_card_default_bg));
+                break;
+            case Constant.NIGHT:
+                mToolbar.setBackgroundColor(ResUtil.getColor(R.color.status_bar_night));
+                mToolbar.setTitleTextColor(ResUtil.getColor(R.color.white));
+                mToolbar.setNavigationIcon(R.drawable.nav_icon_white);
+                mTabLayout.setBackgroundColor(ResUtil.getColor(R.color.status_bar_night));
+                mTabLayout.setTabTextColors(
+                        ResUtil.getColor(R.color.gray),
+                        ResUtil.getColor(R.color.white_light)
+                );
+                mTabLayout.setSelectedTabIndicatorColor(ResUtil.getColor(R.color.red_bg));
+
+                mNavigationView.setBackgroundColor(ResUtil.getColor(R.color.background_night));
+                mNavigationView.setItemTextColor(ResUtil.getColorStateList(R.color.nav_item_text_color_list_night));
+
+                mNavHeaderBackground.setImageDrawable(ResUtil.getDrawable(R.drawable.nav_header_bg_night));
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
@@ -168,10 +217,14 @@ public class MainActivity extends BaseActivity implements MainActivityContract.V
             case R.id.nav_menu_widget_theme:
                 new WidgetThemeDialog(this, R.style.aboutDialog).show();
                 break;
-            case R.id.nav_menu_clear_cache :
+            case R.id.nav_menu_app_theme:
+                Intent appThemeIntent = new Intent(this, AppThemeActivity.class);
+                startActivity(appThemeIntent);
+                break;
+            case R.id.nav_menu_clear_cache:
                 mPresenter.clearCache();
                 break;
-            case R.id.nav_menu_feedback :
+            case R.id.nav_menu_feedback:
                 try {
                     Intent feedBackIntent = mPresenter.buildFeedBackData(MainActivity.this);
                     startActivity(feedBackIntent);
@@ -179,22 +232,21 @@ public class MainActivity extends BaseActivity implements MainActivityContract.V
                     showMessage(ResUtil.getString(R.string.feedback_error));
                 }
                 break;
-            case R.id.nav_menu_update :
+            case R.id.nav_menu_update:
                 // 暂停酷安升级逻辑
                 // mPresenter.getRecentVersionInfo();
-
                 Bundle bundle = new Bundle();
                 bundle.putString(Constant.WEBVIEW_URL, ResUtil.getString(R.string.github_project_url));
                 WebViewActivity.startActivity(MainActivity.this, bundle);
                 break;
-            case R.id.nav_menu_coffee :
+            case R.id.nav_menu_coffee:
                 new RewardDialog(this, R.style.rewardDialog).show();
                 break;
-            case R.id.nav_menu_open_source :
+            case R.id.nav_menu_open_source:
                  Intent openSourceIntent = new Intent(MainActivity.this, OpenSourceActivity.class);
                  startActivity(openSourceIntent);
                 break;
-            case R.id.nav_menu_about :
+            case R.id.nav_menu_about:
                 AboutDialog aboutDialog = new AboutDialog(this, R.style.aboutDialog, new CyclicBarrier(1, new Runnable() {
                     @Override
                     public void run() {

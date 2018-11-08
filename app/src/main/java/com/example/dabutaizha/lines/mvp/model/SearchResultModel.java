@@ -1,14 +1,11 @@
 package com.example.dabutaizha.lines.mvp.model;
 
-import android.util.Log;
-
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 import com.example.dabutaizha.lines.net.ApiServices;
 import com.example.dabutaizha.lines.mvp.contract.SearchResultActivityContract;
 
-import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;

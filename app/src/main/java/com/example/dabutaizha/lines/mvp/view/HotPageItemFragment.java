@@ -16,7 +16,7 @@ import com.example.dabutaizha.lines.ImageUtil.ImageLoader;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
 import com.example.dabutaizha.lines.SentenceUtil;
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 import com.example.dabutaizha.lines.mvp.contract.HotPageItemFragmentContract;
 import com.example.dabutaizha.lines.mvp.adapter.HotPageSentencesAdapter;
 import com.example.dabutaizha.lines.mvp.presenter.HotpageItemPresenter;
@@ -34,6 +34,8 @@ import butterknife.BindView;
 
 public class HotPageItemFragment extends BaseFragment implements HotPageItemFragmentContract.View {
 
+    @BindView(R.id.hotpage_background_layout)
+    public RelativeLayout mBackgroundLayout;
     @BindView(R.id.hotpage_refresh)
     public SwipeRefreshLayout mRefreshLayout;
     @BindView(R.id.hotpage_lines)
@@ -131,6 +133,23 @@ public class HotPageItemFragment extends BaseFragment implements HotPageItemFrag
             mPresenter.pullToRefresh(false);
             mErrorLayout.setVisibility(View.GONE);
         });
+    }
+
+    @Override
+    protected void initTheme(int themeId) {
+        mPresenter.notifyDataThemeChanged(mHotPageSentencesAdapter.getData(), themeId);
+        mHotPageSentencesAdapter.notifyDataSetChanged();
+
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                break;
+            case Constant.NIGHT:
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.hotpage_content_bg));
+                break;
+            default:
+                break;
+        }
     }
 
     @Override

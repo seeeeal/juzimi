@@ -1,6 +1,6 @@
 package com.example.dabutaizha.lines.mvp.contract;
 
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 
 import java.util.List;
 

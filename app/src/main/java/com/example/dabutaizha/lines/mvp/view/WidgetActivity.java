@@ -16,13 +16,16 @@ import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
 import com.example.dabutaizha.lines.SentenceUtil;
-import com.example.dabutaizha.lines.bean.GroupSentencesInfo;
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.GroupSentencesInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 import com.example.dabutaizha.lines.mvp.adapter.CollectionGroupAdapter;
+import com.example.dabutaizha.lines.mvp.adapter.CollectionGroupBaseAdapter;
+import com.example.dabutaizha.lines.mvp.adapter.CollectionGroupNightAdapter;
 import com.example.dabutaizha.lines.mvp.contract.CollectionActivityContract;
 import com.example.dabutaizha.lines.mvp.presenter.CollectionPresenter;
 import com.example.dabutaizha.lines.provider.WidgetModel;
 import com.example.dabutaizha.lines.SentenceItemRegexUtil;
+import com.example.dabutaizha.lines.wxapi.AppThemeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,10 +45,12 @@ public class WidgetActivity extends BaseActivity implements CollectionActivityCo
     public RecyclerView mRecyclerView;
     @BindView(R.id.collection_empty_view)
     public RelativeLayout mEmptyView;
+    @BindView(R.id.collection_background_layout)
+    public RelativeLayout mBackgroundLayout;
 
     private CollectionActivityContract.Presenter mPresenter;
 
-    private CollectionGroupAdapter mGroupAdapter;
+    private CollectionGroupBaseAdapter mGroupAdapter;
     private List<GroupSentencesInfo> mGroupSentencesList;
     int mAppWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
 
@@ -90,7 +95,12 @@ public class WidgetActivity extends BaseActivity implements CollectionActivityCo
         mToolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.colorAccent));
         mToolbar.setNavigationIcon(R.drawable.back);
 
-        mGroupAdapter = new CollectionGroupAdapter(this, mGroupSentencesList);
+        if (AppThemeUtils.getCurrentAppTheme() == Constant.DAY_TIME) {
+            mGroupAdapter = new CollectionGroupAdapter(mGroupSentencesList);
+        } else {
+            mGroupAdapter = new CollectionGroupNightAdapter(mGroupSentencesList);
+        }
+
         mRecyclerView.setAdapter(mGroupAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -116,6 +126,26 @@ public class WidgetActivity extends BaseActivity implements CollectionActivityCo
             setResult(RESULT_OK, resultValue);
             finish();
         });
+    }
+
+    @Override
+    protected void initTheme(int themeId) {
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mToolbar.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                mToolbar.setTitleTextColor(ResUtil.getColor(R.color.black));
+                mToolbar.setNavigationIcon(R.drawable.back);
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                break;
+            case Constant.NIGHT:
+                mToolbar.setBackgroundColor(ResUtil.getColor(R.color.status_bar_night));
+                mToolbar.setTitleTextColor(ResUtil.getColor(R.color.white));
+                mToolbar.setNavigationIcon(R.drawable.back_white);
+                mBackgroundLayout.setBackgroundColor(ResUtil.getColor(R.color.background_night));
+                break;
+            default:
+                break;
+        }
     }
 
     @Override

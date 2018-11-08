@@ -1,15 +1,13 @@
 package com.example.dabutaizha.lines.net;
 
-import com.example.dabutaizha.lines.bean.ArticleInfo;
-import com.example.dabutaizha.lines.bean.BlockInfo;
-import com.example.dabutaizha.lines.bean.CollectionInfo;
-import com.example.dabutaizha.lines.bean.DialogueInfo;
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.ArticleInfo;
+import com.example.dabutaizha.lines.bean.info.BlockInfo;
+import com.example.dabutaizha.lines.bean.info.DialogueInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 
 import io.reactivex.Observable;
 import me.ghui.retrofit.converter.annotations.Html;
 import retrofit2.http.GET;
-import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.Path;
 import retrofit2.http.Query;

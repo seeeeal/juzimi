@@ -2,9 +2,10 @@ package com.example.dabutaizha.lines.mvp.presenter;
 
 import android.os.Bundle;
 
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 import com.example.dabutaizha.lines.mvp.contract.ArticleActivityContract;
 import com.example.dabutaizha.lines.mvp.model.ArticleModel;
+import com.example.dabutaizha.lines.wxapi.AppThemeUtils;
 
 import java.util.List;
 
@@ -49,6 +50,10 @@ public class ArticlePresenter implements ArticleActivityContract.Presenter {
 
     @Override
     public void showArticleData(List<SearchInfo.SentencesItem> itemList) {
+        for (SearchInfo.SentencesItem item : itemList) {
+            item.setItemUIType(AppThemeUtils.getCurrentAppTheme());
+        }
+
         mView.updateList(itemList);
     }
 

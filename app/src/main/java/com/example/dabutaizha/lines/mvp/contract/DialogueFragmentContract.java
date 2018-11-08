@@ -1,7 +1,6 @@
 package com.example.dabutaizha.lines.mvp.contract;
 
-import com.example.dabutaizha.lines.bean.BlockInfoItem;
-import com.example.dabutaizha.lines.bean.DialogueInfo;
+import com.example.dabutaizha.lines.bean.info.DialogueInfo;
 
 import java.util.List;
 

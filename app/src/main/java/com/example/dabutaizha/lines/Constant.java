@@ -84,19 +84,16 @@ public class Constant {
     /**
      *Description: sp存储相关
      */
-
     public static String FRAGMENT_SEARCH = "fragment_search";
-
     public static String FRAGMENT_HOTPAGE_PIC = "fragment_hotpage_pic";
-
     public static String SEARCH_TAG = "search_tag";
-
     public static String PICS_SAVE = "pics_save";
+    public static String APP_THEME_ID = "app_theme_id";
+    public static String THEME_SAVE = "theme_save";
 
     /**
      *Description: 登陆相关
      */
-
     // 开启登陆中弹窗
     public static int START_LOGIN_DIALOG = 0;
     // 关闭登陆中弹窗
@@ -105,7 +102,6 @@ public class Constant {
     /**
      *Description: webview
      */
-
     public static String WEBVIEW_URL = "webview_url";
 
     /**
@@ -119,4 +115,10 @@ public class Constant {
             "clientVersion=3.7.0.0718&qrcode=https%3A%2F%2Fqr.alipay.com%2Fa6x02298utwbzfxgnqlj3f3%3F_s" +
             "%3Dweb-other&_t=1472443966571#Intent;" +
             "scheme=alipayqr;package=com.eg.android.AlipayGphone;end";
+
+    /**
+     *Description: 夜间模式
+     */
+    public static final int DAY_TIME = 0;
+    public static final int NIGHT = 1;
 }

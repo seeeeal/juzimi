@@ -2,10 +2,12 @@ package com.example.dabutaizha.lines.mvp.adapter;
 
 import android.support.annotation.Nullable;
 
+import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
-import com.example.dabutaizha.lines.bean.SearchInfo;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 import com.example.dabutaizha.lines.SentenceItemRegexUtil;
 
 import java.util.List;
@@ -16,10 +18,12 @@ import java.util.List;
  * Created by dabutaizha on 2018/1/29 下午8:19.
  */
 
-public class SentencesAdapter extends BaseQuickAdapter<SearchInfo.SentencesItem, BaseViewHolder> {
+public class SentencesAdapter extends BaseMultiItemQuickAdapter<SearchInfo.SentencesItem, BaseViewHolder> {
 
     public SentencesAdapter(@Nullable List<SearchInfo.SentencesItem> data) {
-        super(R.layout.search_item, data);
+        super(data);
+        addItemType(Constant.DAY_TIME, R.layout.search_item);
+        addItemType(Constant.NIGHT, R.layout.search_item_night);
     }
 
     @Override

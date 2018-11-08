@@ -7,23 +7,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
-import com.example.dabutaizha.lines.bean.PremissionModel;
-import com.example.dabutaizha.lines.database.PremissionObjectBox;
+import com.example.dabutaizha.lines.wxapi.AppThemeUtils;
 
 import java.net.URISyntaxException;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.reactivex.functions.Consumer;
 
 /**
  * Copyright (C) 2018 Unicorn, Inc.
@@ -48,12 +43,19 @@ public class RewardDialog extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dialog_reward);
+
+        setContentView(getCurrentThemeLayout());
+
         ButterKnife.bind(this);
 
         initData();
         initView();
         initViewListener();
+    }
+
+    private int getCurrentThemeLayout() {
+        return (AppThemeUtils.getCurrentAppTheme() == Constant.DAY_TIME ?
+                R.layout.dialog_reward : R.layout.dialog_reward_night);
     }
 
     private void initData() {

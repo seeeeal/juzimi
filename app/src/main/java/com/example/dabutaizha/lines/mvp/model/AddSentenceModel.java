@@ -1,7 +1,7 @@
 package com.example.dabutaizha.lines.mvp.model;
 
 
-import com.example.dabutaizha.lines.bean.SentencesModel;
+import com.example.dabutaizha.lines.bean.model.SentencesModel;
 import com.example.dabutaizha.lines.database.SentencesObjectBox;
 import com.example.dabutaizha.lines.mvp.contract.AddSentenceContract;
 
