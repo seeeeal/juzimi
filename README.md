@@ -90,7 +90,7 @@
 
 # 下载地址
 
-<img src="http://p3z4bc5an.bkt.clouddn.com/1538128450.png" width="180" height="180" alt="扫描下载"/>
+<img src="http://p3z4bc5an.bkt.clouddn.com/1541726124.png" width="180" height="180" alt="扫描下载"/>
 
 # 关于我
 
