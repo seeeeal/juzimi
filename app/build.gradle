@@ -7,8 +7,8 @@ android {
         applicationId "com.example.dabutaizha.lines"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 19
-        versionName "4.0.0"
+        versionCode 20
+        versionName "4.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -34,46 +34,45 @@ dependencies {
     implementation 'com.android.support:design:27.1.0'
     implementation 'com.android.support:support-v4:23.1.1'
 
-    // 棒棒！
+    //棒棒！
     implementation 'com.github.dabutaizha:SlideDampingAnimationLayout:v1.0.2'
-    // 黄油刀
+    //黄油刀
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    // Rx加瓦
+    //Rx加瓦
     compile 'io.reactivex.rxjava2:rxjava:2.1.3'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    // 网络请求三大件
+    //网络请求三大件
     compile 'com.squareup.retrofit2:retrofit:2.4.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.9.0'
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
-    // HTML的解析器
+    //HTML的解析器
     compile 'me.ghui:fruit-converter-retrofit:1.0.4'
     compile 'me.ghui:global-retrofit-converter:1.0.1'
-    // 图片加载库
+    //图片加载库
     implementation 'com.github.bumptech.glide:glide:4.5.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
-    // 6.0运行时权限
+    //6.0运行时权限
     implementation 'pub.devrel:easypermissions:1.1.3'
-    // 沉浸式状态栏
+    //沉浸式状态栏
     compile 'com.gyf.barlibrary:barlibrary:2.3.0'
-    // RecyclerView辅助框架
+    //RecyclerView辅助框架
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
-    // 搜索页视图控件
+    //搜索页视图控件
     compile 'me.gujun.android.taggroup:library:1.4@aar'
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
-    // 社会化分享
+    //社会化分享
     compile 'com.jungly.socialize:biliShare:0.1.0701'
-    // Bannder控件
+    //Bannder控件
     implementation 'cn.bingoogolapple:bga-banner:2.2.4@aar'
-    // 图片浏览控件
+    //图片浏览控件
     implementation 'com.github.chrisbanes:PhotoView:2.1.4'
-    // 图片选择控件
+    //图片选择控件
     implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.1.9'
-
-    // 调试工具
+    //调试工具
     compile 'com.facebook.stetho:stetho:1.5.0'
 
-    // 测试? 不存在的
+    //测试? 不存在的
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'

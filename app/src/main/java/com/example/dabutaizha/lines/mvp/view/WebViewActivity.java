@@ -14,6 +14,7 @@ import android.webkit.WebViewClient;
 
 import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
+import com.example.dabutaizha.lines.ResUtil;
 
 import butterknife.BindView;
 
@@ -38,7 +39,7 @@ public class WebViewActivity extends BaseActivity {
         context.startActivity(intent);
     }
 
-    // 清除缓存，在注册页面防止因为cookie自动登录
+    //清除缓存，在注册页面防止因为cookie自动登录
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -90,7 +91,20 @@ public class WebViewActivity extends BaseActivity {
 
     @Override
     protected void initTheme(int themeId) {
-
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mToolbar.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                mToolbar.setTitleTextColor(ResUtil.getColor(R.color.black));
+                mToolbar.setNavigationIcon(R.drawable.back);
+                break;
+            case Constant.NIGHT:
+                mToolbar.setBackgroundColor(ResUtil.getColor(R.color.status_bar_night));
+                mToolbar.setTitleTextColor(ResUtil.getColor(R.color.white));
+                mToolbar.setNavigationIcon(R.drawable.back_white);
+                break;
+            default:
+                break;
+        }
     }
 
     @Override

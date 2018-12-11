@@ -10,10 +10,13 @@ import android.util.LruCache;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 import com.example.dabutaizha.lines.bean.model.SentencesModel;
 import com.example.dabutaizha.lines.mvp.adapter.ShareAdapter;
 import com.example.dabutaizha.lines.mvp.contract.ShareContract;
 import com.example.dabutaizha.lines.mvp.model.ShareModel;
+
+import java.util.List;
 
 /**
  * Copyright (C) 2018 Unicorn, Inc.
@@ -260,6 +263,15 @@ public class SharePresenter implements ShareContract.Presenter {
     @Override
     public void addData(SentencesModel model) {
         mModule.addData(model);
+    }
+
+    @Override
+    public void notifyDataThemeChanged(List<SearchInfo.SentencesItem> sentencesItems, int themeId) {
+        for (SearchInfo.SentencesItem item : sentencesItems) {
+            if (item.getItemUIType() != themeId) {
+                item.setItemUIType(themeId);
+            }
+        }
     }
 
 }

@@ -140,6 +140,7 @@
         <item>PictureSelector</item>
         <item>stetho</item>
         <item>objectbox-java</item>
+        <item>SlideDampingAnimationLayout</item>
     </string-array>
 
     <string-array name="os_author">
@@ -158,7 +159,7 @@
         <item>LuckSiege</item>
         <item>facebook</item>
         <item>objectbox</item>
-        <item>SlideDampingAnimationLayout</item>
+        <item>dabutaizha</item>
     </string-array>
 
     <string-array name="os_intro">

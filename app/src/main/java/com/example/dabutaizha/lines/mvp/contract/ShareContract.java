@@ -3,9 +3,12 @@ package com.example.dabutaizha.lines.mvp.contract;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.dabutaizha.lines.bean.info.SearchInfo;
 import com.example.dabutaizha.lines.bean.model.SentencesModel;
 import com.example.dabutaizha.lines.mvp.adapter.ShareAdapter;
 import com.example.dabutaizha.lines.mvp.presenter.SharePresenter;
+
+import java.util.List;
 
 /**
  * Copyright (C) 2018 Unicorn, Inc.
@@ -46,6 +49,8 @@ public interface ShareContract {
         void deleteData(long id);
 
         void addData(SentencesModel model);
+
+        void notifyDataThemeChanged(List<SearchInfo.SentencesItem> sentencesItems, int themeId);
 
         void showMessage(String msg);
 

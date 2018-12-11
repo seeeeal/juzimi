@@ -82,9 +82,11 @@ public class ShareActivity extends BaseActivity implements ShareContract.View, E
     private SearchInfo.SentencesItem mSentencesItem;
     protected ShareHelper mShare;
 
-    private String[] mPerms = {Manifest.permission.WRITE_EXTERNAL_STORAGE,
+    private String[] mPerms = {
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.READ_PHONE_STATE};
+            Manifest.permission.READ_PHONE_STATE
+    };
 
     private boolean mIsPermission = false;
     private Bitmap mShareBitmap = null;
@@ -268,6 +270,9 @@ public class ShareActivity extends BaseActivity implements ShareContract.View, E
 
     @Override
     protected void initTheme(int themeId) {
+        mPresenter.notifyDataThemeChanged(mShareAdapter.getData(), themeId);
+        mShareAdapter.notifyDataSetChanged();
+
         switch (themeId) {
             case Constant.DAY_TIME:
                 mToolbar.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
