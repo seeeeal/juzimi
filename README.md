@@ -7,6 +7,16 @@
 # 前言
 每次看完喜欢的电影都会忍不住去豆瓣再看看别人写的影评，或者去句子迷搜下有哪些经典对白，时间长了发现为什么句子迷没有像豆瓣一样有一个APP，可以方便的搜索分享内容，于是自己动手写了一个，并不时更新维护。
 
+# 4.0.1更新内容
+完善夜间模式在句子卡片界面的显示效果
+
+细节优化
+
+# 4.0.0更新内容
+新增适配夜间模式 一键切换
+
+细节优化
+
 # 3.4.0更新内容
 桌面插件新增点击随机展示已收藏句子
 
@@ -44,8 +54,10 @@
 
 桌面插件展示
 
+一键换肤
+
 # 界面展示
-<img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG17.png" width="300" hegiht="120" alt="pic0"/>
+<img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG17.png" width="216" /> <img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG51.png" width="216" /> <img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG50.png" width="216" /> <img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG49.png" width="216" /> <img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG52.png" width="216" />
 
 # 依赖框架
 
@@ -83,7 +95,7 @@
 
 # 下载地址
 
-<img src="http://p3z4bc5an.bkt.clouddn.com/1538128450.png" width="180" height="180" alt="扫描下载"/>
+<img src="https://s1.ax1x.com/2018/12/11/FJ7xEQ.png" width="180" height="180" alt="扫描下载"/>
 
 # 关于我
 
