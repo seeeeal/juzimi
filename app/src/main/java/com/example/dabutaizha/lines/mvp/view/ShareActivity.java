@@ -270,8 +270,6 @@ public class ShareActivity extends BaseActivity implements ShareContract.View, E
 
     @Override
     protected void initTheme(int themeId) {
-        mPresenter.notifyDataThemeChanged(mShareAdapter.getData(), themeId);
-        mShareAdapter.notifyDataSetChanged();
 
         switch (themeId) {
             case Constant.DAY_TIME:

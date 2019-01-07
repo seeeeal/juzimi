@@ -12,7 +12,8 @@ import java.util.List;
 public interface CollectionActivityContract {
 
     interface View {
-        void refreshCollectList(List<GroupSentencesInfo> groups);
+        void
+        refreshCollectList(List<GroupSentencesInfo> groups);
 
         void showMessage(String msg);
     }

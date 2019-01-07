@@ -213,4 +213,5 @@ public class HotPageItemFragment extends BaseFragment implements HotPageItemFrag
         mRefreshLayout.setRefreshing(false);
         mErrorLayout.setVisibility(View.VISIBLE);
     }
+
 }
