@@ -1,5 +1,5 @@
 # juzimi
-个人制作的句子迷APP,MVP架构,Okhttp + Retrofit + RxJava,数据库选用Object-box
+句子迷APP,MVP架构,Okhttp + Retrofit + RxJava,数据库选用Object-box
 
 ![](https://img.shields.io/badge/API-21%2B-green.svg)
 ![](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
