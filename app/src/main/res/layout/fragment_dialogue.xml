@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize"
     android:paddingBottom="@dimen/default_height"
-    android:focusable="true"
-    android:focusableInTouchMode="true">
+    android:focusable="true">
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/fg_dialogue_refresh"

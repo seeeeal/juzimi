@@ -94,7 +94,7 @@
 
     <string-array name="tab_item">
         <item>广场</item>
-        <item>截图</item>
+        <!--<item>截图</item>-->
         <item>分类</item>
         <item>搜索</item>
     </string-array>

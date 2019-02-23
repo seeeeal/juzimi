@@ -81,13 +81,13 @@ public class MainPresenter implements MainActivityContract.Presenter {
                 case 0:
                     mFragmentList.add(HotPageFragment.newInstance(mTitles[i]));
                     break;
+//                case 1:
+//                    mFragmentList.add(DialogueFragment.newInstance(mTitles[i]));
+//                    break;
                 case 1:
-                    mFragmentList.add(DialogueFragment.newInstance(mTitles[i]));
-                    break;
-                case 2:
                     mFragmentList.add(MenuFragment.newInstance(mTitles[i]));
                     break;
-                case 3:
+                case 2:
                     mFragmentList.add(new SearchFragment());
                     break;
                 default:
