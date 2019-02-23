@@ -1,5 +1,5 @@
 # juzimi
-个人制作的句子迷APP,MVP架构,Okhttp + Retrofit + RxJava,数据库选用Object-box
+句子迷APP,MVP架构,Okhttp + Retrofit + RxJava,数据库选用Object-box
 
 ![](https://img.shields.io/badge/API-21%2B-green.svg)
 ![](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
@@ -55,9 +55,6 @@
 桌面插件展示
 
 一键换肤
-
-# 界面展示
-<img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG17.png" width="216" /> <img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG51.png" width="216" /> <img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG50.png" width="216" /> <img src="http://p3z4bc5an.bkt.clouddn.com/WechatIMG49.png" width="216" />
 
 # 依赖框架
 
