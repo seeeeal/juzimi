@@ -8,11 +8,7 @@
 每次看完喜欢的电影都会忍不住去豆瓣再看看别人写的影评，或者去句子迷搜下有哪些经典对白，时间长了发现为什么句子迷没有像豆瓣一样有一个APP，可以方便的搜索分享内容，于是自己动手写了一个，并不时更新维护。
 
 # 界面
-<img src="https://s2.ax1x.com/2019/03/08/kzwmAf.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwnN8.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwM9g.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwu4S.png" width=216/>
-
-<img src="https://s2.ax1x.com/2019/03/08/kzwQ3Q.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwlcj.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzw1js.png" width=216/>
-
-<img src="https://s2.ax1x.com/2019/03/08/kzw8un.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwGBq.png" width=216/>
+<img src="https://s2.ax1x.com/2019/03/08/kzwmAf.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwnN8.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwM9g.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwu4S.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwQ3Q.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwlcj.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzw1js.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzw8un.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwGBq.png" width=216/>
 
 # 4.0.2更新内容
 由于句子迷网站更新 爬虫图片模块失效 暂时移除
