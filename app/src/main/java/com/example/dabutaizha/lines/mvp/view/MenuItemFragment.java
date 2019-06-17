@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import slideDampongAnimationLayout.SlideDampingAnimationLayout;
+import slideDampongAnimationLayout.SlideEventListener;
 
 /**
  * Copyright (C) 2018 Unicorn, Inc.
@@ -101,7 +103,6 @@ public class MenuItemFragment extends BaseFragment implements MenuItemFragmentCo
             mRefreshLayout.setRefreshing(false);
         }
 
-        mCategoryAdapter.notifyDataSetChanged();
         mCategoryAdapter.loadMoreComplete();
     }
 

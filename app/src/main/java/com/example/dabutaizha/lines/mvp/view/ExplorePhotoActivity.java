@@ -1,13 +1,16 @@
 package com.example.dabutaizha.lines.mvp.view;
 
+import android.Manifest;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.ImageUtil.ImageLoader;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
@@ -15,7 +18,11 @@ import com.example.dabutaizha.lines.mvp.contract.ExplorePhotoActivityContract;
 import com.example.dabutaizha.lines.mvp.presenter.ExplorePhotoActivityPresenter;
 import com.github.chrisbanes.photoview.PhotoView;
 
+import java.util.List;
+
 import butterknife.BindView;
+import pub.devrel.easypermissions.AppSettingsDialog;
+import pub.devrel.easypermissions.EasyPermissions;
 import slideDampongAnimationLayout.SlideDampingAnimationLayout;
 import slideDampongAnimationLayout.SlideEventListener;
 
@@ -26,7 +33,7 @@ import slideDampongAnimationLayout.SlideEventListener;
  * Created by dabutaizha on 2018/8/8 下午3:03.
  */
 
-public class ExplorePhotoActivity extends BaseActivity implements ExplorePhotoActivityContract.View {
+public class ExplorePhotoActivity extends BaseActivity implements ExplorePhotoActivityContract.View, EasyPermissions.PermissionCallbacks {
 
     public static final String EXPLORE_PHOTO_KEY = "explore_photo_key";
 
@@ -38,6 +45,14 @@ public class ExplorePhotoActivity extends BaseActivity implements ExplorePhotoAc
     public TextView mQuestionIcon;
     @BindView(R.id.explore_tip_content)
     public TextView mTipContent;
+
+
+    private String[] mPerms = {
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.READ_PHONE_STATE
+    };
+    private boolean mIsPermission = false;
 
     private ExplorePhotoActivityContract.Presenter mPresenter;
     private String mPhotoUrl;
@@ -69,8 +84,12 @@ public class ExplorePhotoActivity extends BaseActivity implements ExplorePhotoAc
 
             @Override
             public void rightEvent() {
-                ImageLoader.getBitmapByUrl(ExplorePhotoActivity.this , mPhotoUrl);
-                showMessage(ResUtil.getString(R.string.save_successd));
+                if (mIsPermission) {
+                    ImageLoader.getBitmapByUrl(ExplorePhotoActivity.this , mPhotoUrl);
+                    showMessage(ResUtil.getString(R.string.save_successd));
+                } else {
+                    showMessage(ResUtil.getString(R.string.no_per));
+                }
             }
         });
 
@@ -81,12 +100,32 @@ public class ExplorePhotoActivity extends BaseActivity implements ExplorePhotoAc
 
     @Override
     protected void initTheme(int themeId) {
-
+        switch (themeId) {
+            case Constant.DAY_TIME:
+                mSlideDampingAnimationLayout.setBackgroundColor(ResUtil.getColor(R.color.colorPrimary));
+                break;
+            case Constant.NIGHT:
+                mSlideDampingAnimationLayout.setBackgroundColor(ResUtil.getColor(R.color.background_night));
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
     protected void process() {
-        ImageLoader.loadImageByUrl(this, mPhotoView, mPhotoUrl);
+        if (!EasyPermissions.hasPermissions(this, mPerms)) {
+            EasyPermissions.requestPermissions(this,
+                    ResUtil.getString(R.string.per_request),
+                    R.string.accept,
+                    R.string.cancel,
+                    0,
+                    mPerms);
+        } else {
+            mIsPermission = true;
+        }
+
+        ImageLoader.loadImageByUrlFitLayout(this, mPhotoView, mPhotoUrl);
     }
 
     @Override
@@ -95,11 +134,48 @@ public class ExplorePhotoActivity extends BaseActivity implements ExplorePhotoAc
     }
 
     /**
-     *Description:
+     *Description: ExplorePhotoActivityContract.View
      */
     @Override
     public void showMessage(String message) {
         ResUtil.showToast(this, message);
+    }
+
+    /**
+     *Description: EasyPermissions.PermissionCallbacks
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
+        showMessage(ResUtil.getString(R.string.pre_success));
+        mIsPermission = true;
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
+        if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
+            new AppSettingsDialog.Builder(this)
+                    .setTitle(R.string.pre_tip)
+                    .setPositiveButton(R.string.pre_positive)
+                    .setNegativeButton(R.string.pre_negative)
+                    .setRationale(R.string.rationale_tip)
+                    .build()
+                    .show();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == AppSettingsDialog.DEFAULT_SETTINGS_REQ_CODE) {
+            mIsPermission = EasyPermissions.hasPermissions(this, mPerms);
+        }
     }
 
     public String getPhotoUrl() {
@@ -133,4 +209,5 @@ public class ExplorePhotoActivity extends BaseActivity implements ExplorePhotoAc
             contentAnimatorStart.start();
         }
     }
+
 }

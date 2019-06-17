@@ -3,8 +3,6 @@
     android:id="@+id/dialogue_img"
     android:layout_width="match_parent"
     android:layout_height="220dp"
-    android:background="@color/black"
-    android:scaleType="centerCrop"
-    android:layout_margin="5dp">
+    android:layout_marginTop="6dp">
 
 </ImageView>

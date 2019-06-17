@@ -86,6 +86,10 @@ public class ApiServices {
                     .addInterceptor(chain -> {
                         Request request = chain.request()
                                 .newBuilder()
+                                .removeHeader("If-None-Match")
+                                .addHeader("If-None-Match", "")
+                                .removeHeader("If-Modified-Since")
+                                .addHeader("If-Modified-Since", "")
                                 .removeHeader("User-Agent")
                                 .addHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko")
                                 .build();

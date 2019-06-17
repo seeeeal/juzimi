@@ -16,6 +16,7 @@ import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -173,13 +174,32 @@ public class ImageLoader {
 
         GlideApp.with(context)
                 .load(url)
-                .fitCenter()
-                .placeholder(R.color.black)
-                .dontTransform()
+                .placeholder(R.color.white_dark)
+                .centerCrop()
+                //.circleCrop()
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                .transition(DrawableTransitionOptions.withCrossFade(200))
                 .into(imageView);
     }
 
-    // 加载网络图片成喵喵喵？
+    // 加载网络图片
+    public static void loadImageByUrlFitLayout(Context context, ImageView imageView, String url) {
+        // 防止在图片加载完成之前Activity视图已经销毁造成的crash
+        if (context == null || ((Activity)context).isFinishing()) {
+            return;
+        }
+
+        GlideApp.with(context)
+                .load(url)
+                .placeholder(R.color.white_dark)
+                .fitCenter()
+                //.circleCrop()
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                .transition(DrawableTransitionOptions.withCrossFade(200))
+                .into(imageView);
+    }
+
+    // 加载网络图片成圆角矩形
     public static void loadRoundByUrl(Context context, ImageView imageView, String url) {
         if (context == null || ((Activity)context).isFinishing()) {
             return;
@@ -191,7 +211,8 @@ public class ImageLoader {
                         GlideApp.with(context)
                                 .load(url.replace("file.juzimi.com", "www.juzimi.com/sites/default/files"))
                 )
-//                .transform(new GlideRoundTransform(BaseApplication.getInstance(), 24))
+                //.circleCrop()
+                .transform(new GlideRoundTransform(BaseApplication.getInstance(), 5))
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .transition(DrawableTransitionOptions.withCrossFade(200))
                 .into(imageView);

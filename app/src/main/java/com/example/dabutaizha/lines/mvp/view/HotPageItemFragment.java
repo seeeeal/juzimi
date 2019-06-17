@@ -26,6 +26,8 @@ import java.util.List;
 
 import butterknife.BindView;
 
+import static java.security.AccessController.getContext;
+
 /**
  * Copyright (C) 2018 Unicorn, Inc.
  * Description :

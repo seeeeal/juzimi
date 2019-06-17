@@ -47,9 +47,10 @@
             android:textSize="12sp"
             android:lineSpacingExtra="5dp"
             app:met_baseColor="@color/black_translate"
+            app:met_floatingLabelAlwaysShown="true"
+            app:met_floatingLabelAnimating="true"
             app:met_primaryColor="@color/black"
-            app:met_floatingLabel="normal"
-            android:hint="出自作品"
+            app:met_floatingLabel="highlight"
             app:met_floatingLabelText="出自作品"
             app:met_hideUnderline="true" />
 
@@ -64,9 +65,10 @@
             android:textSize="12sp"
             android:lineSpacingExtra="5dp"
             app:met_baseColor="@color/black_translate"
+            app:met_floatingLabelAlwaysShown="true"
+            app:met_floatingLabelAnimating="true"
             app:met_primaryColor="@color/black"
-            app:met_floatingLabel="normal"
-            android:hint="作者"
+            app:met_floatingLabel="highlight"
             app:met_floatingLabelText="作者"
             app:met_hideUnderline="true" />
 
@@ -81,9 +83,10 @@
             android:textSize="12sp"
             android:lineSpacingExtra="5dp"
             app:met_baseColor="@color/black_translate"
+            app:met_floatingLabelAlwaysShown="true"
             app:met_primaryColor="@color/black"
-            app:met_floatingLabel="normal"
-            android:hint="句子正文"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelAnimating="true"
             app:met_floatingLabelText="句子正文"
             app:met_hideUnderline="true" />
 

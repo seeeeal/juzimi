@@ -44,7 +44,7 @@
             android:layout_alignBottom="@id/share_card_top_image"
             android:fontFamily="@font/font_family"
             android:text="鲁迅"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:lineSpacingExtra="5dp"/>
 
@@ -57,7 +57,7 @@
             android:layout_above="@id/share_card_top_author"
             android:fontFamily="@font/font_family"
             android:textSize="24sp"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/white"
             android:text="论薯片"
             android:lineSpacingExtra="5dp"/>
 

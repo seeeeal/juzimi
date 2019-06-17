@@ -1,6 +1,7 @@
 package com.example.dabutaizha.lines.mvp.view.dialog;
 
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -75,9 +76,12 @@ public class RewardDialog extends Dialog {
             try {
                 Intent intent = Intent.parseUri(intentFullUrl, Intent.URI_INTENT_SCHEME );
                 mContext.startActivity(intent);
+            } catch (ActivityNotFoundException e) {
+                ResUtil.showToast(mContext, "尚未安装支付宝");
             } catch (URISyntaxException e) {
                 e.printStackTrace();
             }
+
             RewardDialog.this.dismiss();
         });
     }

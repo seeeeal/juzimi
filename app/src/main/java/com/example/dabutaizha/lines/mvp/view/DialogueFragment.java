@@ -3,6 +3,7 @@ package com.example.dabutaizha.lines.mvp.view;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -77,7 +78,7 @@ public class DialogueFragment extends BaseFragment implements DialogueFragmentCo
         mDialogueAdapter.setEnableLoadMore(false);
 
         mDialogueRcy.setAdapter(mDialogueAdapter);
-        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         mDialogueRcy.setLayoutManager(layoutManager);
     }
 

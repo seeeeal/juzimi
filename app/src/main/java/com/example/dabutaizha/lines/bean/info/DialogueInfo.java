@@ -36,7 +36,7 @@ public class DialogueInfo extends BaseInfo {
         private String mDialogueItemUrl;
 
         public String getmDialogueItemUrl() {
-            return "http:" + mDialogueItemUrl;
+            return mDialogueItemUrl;
         }
 
         public void setmDialogueItemUrl(String mDialogueItemUrl) {

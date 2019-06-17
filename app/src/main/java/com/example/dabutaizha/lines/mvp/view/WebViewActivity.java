@@ -16,7 +16,11 @@ import com.example.dabutaizha.lines.Constant;
 import com.example.dabutaizha.lines.R;
 import com.example.dabutaizha.lines.ResUtil;
 
+import java.util.Objects;
+
 import butterknife.BindView;
+import slideDampongAnimationLayout.SlideDampingAnimationLayout;
+import slideDampongAnimationLayout.SlideEventListener;
 
 /**
  * Copyright (C) 2018 Unicorn, Inc.
@@ -30,6 +34,8 @@ public class WebViewActivity extends BaseActivity {
     public Toolbar mToolbar;
     @BindView(R.id.web_view)
     public WebView mWebView;
+    @BindView(R.id.web_view_sliding_layout)
+    SlideDampingAnimationLayout mSlideDampingAnimationLayout;
 
     private String mUrl;
 
@@ -57,6 +63,7 @@ public class WebViewActivity extends BaseActivity {
     @Override
     protected void initData() {
         Bundle bundle = getIntent().getExtras();
+        assert bundle != null;
         mUrl = bundle.getString(Constant.WEBVIEW_URL, "");
     }
 
@@ -64,7 +71,7 @@ public class WebViewActivity extends BaseActivity {
     @Override
     protected void initView() {
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle(mUrl);
+        Objects.requireNonNull(getSupportActionBar()).setTitle("加载中...");
         mToolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.colorAccent));
         mToolbar.setNavigationIcon(R.drawable.back);
 
@@ -80,6 +87,24 @@ public class WebViewActivity extends BaseActivity {
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 view.loadUrl(request.getUrl().toString());
                 return super.shouldOverrideUrlLoading(view, request);
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                mToolbar.setTitle(view.getTitle());
+                super.onPageFinished(view, url);
+            }
+        });
+
+        mSlideDampingAnimationLayout.setSlideListener(new SlideEventListener() {
+            @Override
+            public void leftEvent() {
+                WebViewActivity.this.finish();
+            }
+
+            @Override
+            public void rightEvent() {
+
             }
         });
     }

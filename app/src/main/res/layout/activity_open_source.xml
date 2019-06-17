@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<slideDampongAnimationLayout.SlideDampingAnimationLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/open_source_sliding_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:fitsSystemWindows="true">
+    android:focusable="true"
+    app:bezier_curves_color="@color/black"
+    app:bezier_curves_type="high_order_bezier_curves"
+    app:allow_gesture="only_left">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -24,4 +28,4 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="?attr/actionBarSize"/>
 
-</RelativeLayout>
+</slideDampongAnimationLayout.SlideDampingAnimationLayout>

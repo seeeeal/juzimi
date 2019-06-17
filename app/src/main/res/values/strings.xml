@@ -47,7 +47,7 @@
     <string name="jp_bg_diy">背景</string>
     <string name="share_line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</string>
     <string name="share_title_col">字色</string>
-    <string name="nav_menu_update">○\t\t\t\t\t\t检测升级</string>
+    <string name="nav_menu_update">○\t\t\t\t\t\t查看Github版本</string>
     <string name="request_version_error">请求失败</string>
     <string name="update_tip">已是最新版本</string>
     <string name="exist_new_version">发现新版本是否立即下载</string>
@@ -94,7 +94,7 @@
 
     <string-array name="tab_item">
         <item>广场</item>
-        <!--<item>截图</item>-->
+        <item>截图</item>
         <item>分类</item>
         <item>搜索</item>
     </string-array>

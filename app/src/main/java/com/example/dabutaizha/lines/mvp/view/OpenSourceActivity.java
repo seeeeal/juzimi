@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import slideDampongAnimationLayout.SlideDampingAnimationLayout;
+import slideDampongAnimationLayout.SlideEventListener;
 
 /**
  * Copyright (C) 2018 Unicorn, Inc.
@@ -31,6 +33,8 @@ public class OpenSourceActivity extends BaseActivity implements OpenSourceContra
     public Toolbar mToolbar;
     @BindView(R.id.open_source_rcy)
     public RecyclerView mRecyclerView;
+    @BindView(R.id.open_source_sliding_layout)
+    public SlideDampingAnimationLayout mSlideDampingAnimationLayout;
 
     private OpenSourceContract.Presenter mPresenter;
 
@@ -64,6 +68,18 @@ public class OpenSourceActivity extends BaseActivity implements OpenSourceContra
             Bundle bundle = new Bundle();
             bundle.putString(Constant.WEBVIEW_URL, info.getOpenSourceLink());
             WebViewActivity.startActivity(OpenSourceActivity.this, bundle);
+        });
+
+        mSlideDampingAnimationLayout.setSlideListener(new SlideEventListener() {
+            @Override
+            public void leftEvent() {
+                OpenSourceActivity.this.finish();
+            }
+
+            @Override
+            public void rightEvent() {
+
+            }
         });
     }
 

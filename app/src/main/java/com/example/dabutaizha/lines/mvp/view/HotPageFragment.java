@@ -17,6 +17,8 @@ import java.util.List;
 
 import butterknife.BindView;
 
+import static com.example.dabutaizha.lines.ResUtil.getString;
+
 /**
  * Copyright (C) 2018 Unicorn, Inc.
  * Description :
