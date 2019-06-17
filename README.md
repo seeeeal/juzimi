@@ -105,7 +105,7 @@
 
 # 下载地址
 
-<img src="https://s2.ax1x.com/2019/02/23/khNN8I.png" width="180" height="180" alt="扫描下载"/>
+<img src="https://s2.ax1x.com/2019/06/17/VHvcuV.png" width="180" height="180" alt="扫描下载"/>
 
 # 关于我
 
