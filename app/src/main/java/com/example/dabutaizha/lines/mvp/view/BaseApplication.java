@@ -16,7 +16,7 @@ import io.objectbox.BoxStore;
  * Created by dabutaizha on 2018/1/12 下午5:39.
  */
 
-public class BaseApplication extends Application {
+public class BaseApplication extends Application { 
 
     public static final String TAG = BaseApplication.class.getSimpleName();
 
