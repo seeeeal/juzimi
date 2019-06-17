@@ -10,6 +10,11 @@
 # 界面
 <img src="https://s2.ax1x.com/2019/03/08/kzwnN8.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwM9g.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwu4S.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwQ3Q.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwlcj.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzw1js.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzw8un.png" width=216/><img src="https://s2.ax1x.com/2019/03/08/kzwGBq.png" width=216/>
 
+# 4.0.3更新内容
+修复图片区爬虫失效的问题
+
+优化部分布局界面
+
 # 4.0.2更新内容
 由于句子迷网站更新 爬虫图片模块失效 暂时移除
 
@@ -113,4 +118,8 @@ Home:dabutaizha.cc
 该项目纯属兴趣爱好仅供学习交流使用，不得用于商业用途！
 
 若该涉及版权问题，请联系我 dabutaizha@163.com 将立即撤除
+
+# APP内彩蛋
+
+关于 -> 长按About Me
 
