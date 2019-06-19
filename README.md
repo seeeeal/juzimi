@@ -105,7 +105,7 @@
 
 # 下载地址
 
-<img src="https://s2.ax1x.com/2019/06/17/VHvcuV.png" width="180" height="180" alt="扫描下载"/>
+<img src="http://tva1.sinaimg.cn/large/0060lm7Tly1g46sy650vzj308c08ct8j.jpg" width="180" height="180" alt="扫描下载"/>
 
 # 关于我
 
