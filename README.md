@@ -105,7 +105,7 @@
 
 # 下载地址
 
-<img src="http://tva1.sinaimg.cn/large/0060lm7Tly1g46sy650vzj308c08ct8j.jpg" width="180" height="180" alt="扫描下载"/>
+[摘抄 V4.0.3](https://github.com/dabutaizha/juzimi/releases/download/V4.0.3/4.0.3.apk)
 
 # 关于我
 
