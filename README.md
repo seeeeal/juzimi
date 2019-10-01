@@ -80,7 +80,7 @@ Home:dabutaizha.cc
 
 该项目纯属兴趣爱好仅供学习交流使用，不得用于商业用途！
 
-若该涉及版权问题，请联系dabutaizha@163.com 将立即删除
+若该项目涉及版权问题，请联系dabutaizha@163.com 将立即删除
 
 # APP内彩蛋
 
