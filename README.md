@@ -66,10 +66,6 @@
 
 [SlideDampingAnimationLayout](https://github.com/dabutaizha/SlideDampingAnimationLayout)
 
-# 下载地址
-
-[摘抄 V4.0.3](https://github.com/dabutaizha/juzimi/releases/download/V4.0.3/4.0.3.apk)
-
 # 关于我
 
 Email:dabutaizha@163.com
