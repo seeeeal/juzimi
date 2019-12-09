@@ -66,19 +66,8 @@
 
 [SlideDampingAnimationLayout](https://github.com/dabutaizha/SlideDampingAnimationLayout)
 
-# 关于我
-
-Email:dabutaizha@163.com
-
-Home:dabutaizha.cc
-
 # 声明
 
 该项目纯属兴趣爱好仅供学习交流使用，不得用于商业用途！
 
 若该项目涉及版权问题，请联系dabutaizha@163.com 将立即删除
-
-# APP内彩蛋
-
-关于 -> 长按About Me
-
