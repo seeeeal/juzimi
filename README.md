@@ -46,7 +46,7 @@
 
 [Object-Box](https://github.com/objectbox/objectbox-java)
 
-[Glied](https://github.com/bumptech/glide)
+[Glide](https://github.com/bumptech/glide)
 
 [PictureSelect](https://github.com/LuckSiege/PictureSelector)
 
